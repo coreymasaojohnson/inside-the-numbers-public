@@ -1,0 +1,60 @@
+# Continuous integration for inside-the-numbers-public.
+#
+# Every gate below is enforced. Nothing is skipped to make the badge green —
+# if a check fails here, it is because the repository does not pass it.
+#
+# STATUS 2026-09-21: `npm ci`, `prettier --check` and `npm run build` pass.
+# `npm run check` (70 errors) and `npx eslint .` (102 errors) do not yet, and
+# the pytest job has no tests to run. Do not push this workflow to a public
+# repository until those pass locally — a red badge on the repository you are
+# asking a hiring committee to read is worse than no badge at all.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  web:
+    name: Web app — types, lint, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Type check
+        run: npm run check
+
+      - name: Formatting
+        run: npx prettier --check .
+
+      - name: Lint
+        run: npx eslint .
+
+      - name: Build
+        run: npm run build
+
+  pipeline:
+    name: IPUMS pipeline — tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install
+        run: pip install pytest pandas
+
+      - name: Test
+        run: pytest scripts/ -v
