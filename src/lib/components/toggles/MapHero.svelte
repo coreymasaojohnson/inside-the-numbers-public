@@ -1,3 +1,8 @@
+<script context="module" lang="ts">
+	export type Scope = 'county' | 'state';
+	export type Category = 'combined' | 'asian' | 'nhpi';
+</script>
+
 <script lang="ts">
 	import * as d3 from 'd3';
 	import { feature, mesh } from 'topojson-client';
@@ -5,20 +10,16 @@
 
 	import {
 		getAanhpiForeignBornCached,
-		getAanhpiForeignBornByStateCached,
-		computeSharePercent
+		getAanhpiForeignBornByStateCached
 	} from '$lib/data/acs';
 	import type { CountyFips } from '$lib/data/acs';
 	import { PALETTE } from '$lib/styles/palettes';
 
 	// ---- props ----
-	export type Scope = 'county' | 'state';
-	export type Category = 'combined' | 'asian' | 'nhpi';
-
 	export let scope: Scope = 'county';
 	export let category: Category = 'combined';
 
-	// ---- Svelte 5 callback prop for first render completion ----
+	// ---- Svelte callback prop for first render completion ----
 	export let onFirstRenderComplete: (() => void) | undefined = undefined;
 	let firstRenderDispatched = false;
 	let firstRenderTimeout: ReturnType<typeof setTimeout> | null = null;
@@ -50,18 +51,11 @@
 	$: colorPercent = (() => {
 		if (category === 'nhpi') {
 			if (scope === 'state') {
-				// State-level NHPI: Most states 0-5%, Hawaii at 9.8%
-				// Domain: [0.1, 0.3, 0.6, 1, 3, 5] (6 values = 7 buckets)
-				// Buckets: 0%, >0-0.1%, 0.1-0.3%, 0.3-0.6%, 0.6-1%, 1-3%, 3-5%, 5%+
 				return d3
 					.scaleThreshold<number, string>()
 					.domain([0.1, 0.3, 0.6, 1, 3, 5])
 					.range(ACTIVE_PALETTE);
 			} else {
-				// County-level NHPI: Most counties 0-5%, but outliers up to 40%
-				// Domain: [0.1, 0.3, 0.6, 1, 3, 10] (6 values = 7 buckets)
-				// Buckets: 0%, >0-0.1%, 0.1-0.3%, 0.3-0.6%, 0.6-1%, 1-5%, 5-15%, 15%+
-				// This captures 22% and 39% outliers in the 15%+ bucket
 				return d3
 					.scaleThreshold<number, string>()
 					.domain([0.1, 0.3, 0.6, 1, 5, 15])
@@ -74,21 +68,18 @@
 					.domain([10, 15, 20, 30, 40, 50])
 					.range(ACTIVE_PALETTE);
 			} else {
-				// County Asian with zero bucket
 				return d3
 					.scaleThreshold<number, string>()
 					.domain([6, 11, 17, 23, 29, 34])
 					.range(ACTIVE_PALETTE);
 			}
 		} else {
-			// Combined
 			if (scope === 'state') {
 				return d3
 					.scaleThreshold<number, string>()
 					.domain([10, 15, 20, 30, 40, 50])
 					.range(ACTIVE_PALETTE);
 			} else {
-				// County Combined with zero bucket
 				return d3
 					.scaleThreshold<number, string>()
 					.domain([6, 11, 17, 23, 29, 34])
@@ -122,7 +113,7 @@
 
 	async function loadTopo() {
 		const atlas = (await import('us-atlas/counties-10m.json')).default as any;
-		counties = feature(atlas, atlas.objects.counties).features as any[];
+		counties = (feature(atlas, atlas.objects.counties) as any).features as any[];
 		stateBorders = mesh(atlas, atlas.objects.states, (a: any, b: any) => a !== b);
 		statesFeats = (feature(atlas, atlas.objects.states) as any).features as any[];
 		console.info('[MapHero] topo counties:', counties.length, 'states:', statesFeats.length);
@@ -223,20 +214,13 @@
 				const k = getKey(d);
 				const count = categoryValues.get(k as any);
 
-				// Return neutral for missing data
 				if (count == null) return neutral;
-
-				// Show zero values as neutral for:
-				// - NHPI at any scope (state or county)
-				// - Asian/Combined at county level only
 				if (count === 0 && (category === 'nhpi' || scope === 'county')) return neutral;
 
-				// Use percentage-based coloring if denominator is available
 				if (denomByFips) {
 					const denom = denomByFips.get(k as any);
 					if (denom && denom > 0) {
 						const pct = (count / denom) * 100;
-						// Show zero percentages as neutral (same conditions)
 						if (pct === 0 && (category === 'nhpi' || scope === 'county')) return neutral;
 						return colorPercent(pct);
 					}
@@ -251,7 +235,7 @@
 				d3.select(this).style('stroke-width', 1);
 				showTooltip(event, d, getKey);
 			})
-			.on('pointermove', (event: PointerEvent, d: any) => moveTooltip(event, d))
+			.on('pointermove', (event: PointerEvent) => moveTooltip(event))
 			.on('pointerleave', function () {
 				d3.select(this).style('stroke-width', 0.5);
 				hideTooltip();
@@ -270,9 +254,6 @@
 
 	function render() {
 		if (!container || !counties || !statesFeats || !stateBorders) return;
-		// Skip ResizeObserver's initial fire before data loads: it draws a gray map, sets
-		// initialized=true, and the reactive $: block increments runId — which breaks the
-		// currentRunId===runId guard in onMount and silently drops onFirstRenderComplete.
 		if (!initialized && aapiByFips.size === 0) return;
 		if (isRendering) {
 			console.log('[MapHero] render() blocked - already rendering');
@@ -281,8 +262,6 @@
 
 		const width = container.clientWidth;
 
-		// Don't render if container isn't visible or has no width yet
-		// The ResizeObserver will call render() again when it becomes visible
 		if (!width || width < 100) {
 			console.log('[MapHero] render() skipped - container not visible or too small:', width);
 			return;
@@ -298,7 +277,6 @@
 		);
 		isRendering = true;
 
-		// Clean up any stray wrappers or SVGs from interrupted renders
 		d3.select(container).selectAll('div').remove();
 		d3.select(container)
 			.selectAll('svg')
@@ -319,18 +297,12 @@
 			typeof window !== 'undefined' &&
 			window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
 
-		// Lock height to prevent container collapse during any render
 		container.style.height = `${height}px`;
 
 		const oldSvg = svg;
-
-		// Determine if we should cross-fade (only after initialization and with animation enabled)
 		const shouldCrossFade = initialized && !reduceMotion && oldSvg;
 
 		if (shouldCrossFade) {
-			// --- Cross-Fade Transition ---
-
-			// Position new SVG absolutely on top of old one
 			const newSvg = drawMapSkeleton(width, height);
 			newSvg
 				.style('position', 'absolute')
@@ -340,7 +312,6 @@
 
 			drawMapContents(newSvg, width, height, feats, getKey);
 
-			// Fade in new, fade out old
 			newSvg
 				.transition()
 				.delay(60)
@@ -359,22 +330,17 @@
 			}
 			svg = newSvg;
 		} else {
-			// --- No Transition (first render or reduced motion) ---
 			if (svg) svg.remove();
 			svg = drawMapSkeleton(width, height);
 
-			// Start at opacity 0 on first mount, then immediately show
-			// This prevents double-fade with page-level transitions
 			if (!initialized) {
 				svg.style('opacity', '0');
 			}
 
 			drawMapContents(svg, width, height, feats, getKey);
 
-			// Immediately show (no transition) - let page-level crossfade handle animation
 			if (!initialized) {
 				svg.style('opacity', '1');
-				initialized = true;
 			}
 
 			isRendering = false;
@@ -401,9 +367,6 @@
 			? `Foreign-born ${categoryName} as percentage of overall foreign-born population`
 			: `Foreign-born ${categoryName} population count`;
 
-		// Add neutral swatch at the beginning for:
-		// - NHPI at any scope (state or county)
-		// - Any category at county level
 		const showZeroBucket = category === 'nhpi' || scope === 'county';
 		const swatches = showZeroBucket ? [neutral, ...scale.range()] : scale.range();
 		const legendW = swatches.length * boxW + (swatches.length - 1) * gap;
@@ -457,7 +420,6 @@
 
 		if (usingPercent) {
 			if (showZeroBucket) {
-				// County-level: show zero bucket + threshold ranges
 				const t = (scale as d3.ScaleThreshold<number, string>).domain();
 				items
 					.append('text')
@@ -479,7 +441,6 @@
 						return `${pct(a)}–${pct(b)}`;
 					});
 			} else {
-				// State-level: standard threshold ranges
 				const t = (scale as d3.ScaleThreshold<number, string>).domain();
 				const starts = [0, ...t];
 				items
@@ -497,7 +458,6 @@
 			}
 		} else {
 			if (showZeroBucket) {
-				// County-level counts: show zero bucket + threshold ranges
 				const t = (scale as d3.ScaleThreshold<number, string>).domain();
 				const fmt = d3.format(',');
 				items
@@ -518,7 +478,6 @@
 						return `${fmt(a)}–${fmt(b)}`;
 					});
 			} else {
-				// State-level counts: standard threshold ranges
 				const t = (scale as d3.ScaleThreshold<number, string>).domain();
 				const starts = [0, ...t];
 				const fmt = d3.format(',');
@@ -596,50 +555,52 @@
 	// ---- mount & reactive scope/category handling ----
 	let initialized = false;
 
-	onMount(async () => {
+	onMount(() => {
 		let alive = true;
-		try {
-			await loadTopo();
-			if (!alive) return;
+		(async () => {
+			try {
+				await loadTopo();
+				if (!alive) return;
 
-			const debouncedRender = debounce(render, 120);
-			ro = new ResizeObserver(() => debouncedRender());
-			ro.observe(container);
+				const debouncedRender = debounce(render, 120);
+				ro = new ResizeObserver(() => debouncedRender());
+				ro.observe(container);
 
-			const currentRunId = ++runId;
-			await loadDataForScope(scope);
-			if (!alive) return;
+				const currentRunId = ++runId;
+				await loadDataForScope(scope);
+				if (!alive) return;
 
-			if (currentRunId === runId) {
-				render();
-				initialized = true;
-				// Call callback for initial page load fade-in
-				if (!firstRenderDispatched && onFirstRenderComplete) {
-					firstRenderDispatched = true;
-					firstRenderTimeout = setTimeout(() => onFirstRenderComplete(), 100);
+				if (currentRunId === runId) {
+					initialized = true;
+					render();
+					if (!firstRenderDispatched && onFirstRenderComplete) {
+						firstRenderDispatched = true;
+						firstRenderTimeout = setTimeout(() => onFirstRenderComplete(), 100);
+					}
 				}
+			} catch (err) {
+				console.error('[MapHero] init failed:', err);
+				if (svg) render();
 			}
-		} catch (err) {
-			console.error('[MapHero] init failed:', err);
-			if (svg) render();
-		}
+		})();
+
 		return () => {
 			alive = false;
 		};
 	});
 
-	$: if (initialized && (scope || category) && counties && statesFeats) {
-		console.log('[MapHero] reactive statement triggered - scope:', scope, 'category:', category);
+	function handleScopeOrCategoryChange(currentScope: Scope) {
 		const currentRunId = ++runId;
-		const scopeAtStart = scope;
-
 		(async () => {
-			await loadDataForScope(scopeAtStart);
-
+			await loadDataForScope(currentScope);
 			if (currentRunId === runId) {
 				render();
 			}
 		})();
+	}
+
+	$: if (initialized && (scope !== undefined || category !== undefined) && counties && statesFeats) {
+		handleScopeOrCategoryChange(scope);
 	}
 
 	onDestroy(() => {

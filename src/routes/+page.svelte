@@ -37,7 +37,6 @@
 	// Track initial page load fade-ins (staggered: hero first, then IntroBelow)
 	let heroLoadComplete = false;
 	let introLoadComplete = false;
-	let initialRenderAttempted = false;
 	// Suppresses the view-container in:fade on initial load so the wrapper's
 	// CSS transition is the only fade — prevents a stacked ease-out "jump".
 	let viewTransitionsEnabled = false;
@@ -67,14 +66,13 @@
 	});
 
 	// --- Prepare state for IntroBelow ---
-	$: introView = $currentView;
+	$: introView =$currentView;
 
-	$: introScope = $isMap
+	$: introScope =$isMap
 		? `${$mapCategory.charAt(0).toUpperCase() + $mapCategory.slice(1)} - ${$mapScope.charAt(0).toUpperCase() + $mapScope.slice(1)}`
 		: $isTreemap
-			? $treemapFamily.charAt(0).toUpperCase() + $treemapFamily.slice(1)
-			: $isGrowth
-				? $growthView.charAt(0).toUpperCase() + $growthView.slice(1)
+			? $treemapFamily.charAt(0).toUpperCase() + $treemapFamily.slice(1) 			:$isGrowth
+				? $growthView.charAt(0).toUpperCase() +$growthView.slice(1)
 				: '';
 
 	$: introScale = $isGrowth ? ($growthScale === 'absolute' ? 'Absolute' : 'Indexed') : '';
@@ -92,30 +90,27 @@
 
 		if ($isMap) {
 			mapScope.set(internalKey as 'county' | 'state');
-		} else if ($isTreemap) {
-			treemapFamily.set(internalKey as 'combined' | 'asian' | 'nhpi');
-		} else if ($isGrowth) {
+		} else if ($isTreemap) { 			treemapFamily.set(internalKey as 'combined' | 'asian' | 'nhpi'); 		} else if ($isGrowth) {
 			growthView.set(internalKey as 'combined' | 'asian' | 'nhpi');
 		}
 	};
 
 	const handleScaleChange = (value: string) => {
-		// FIX: Maps external "Absolute" to internal 'absolute'
+		// Maps external "Absolute" to internal 'absolute'
 		const internalKey = value.toLowerCase() === 'absolute' ? 'absolute' : 'indexed';
 
 		if ($isGrowth) {
-			// FIX: Casts the new internalKey to the correct union type
 			growthScale.set(internalKey as 'indexed' | 'absolute');
 		}
 	};
 
 	// Sync with currentToggle store from stories
-	onMount(async () => {
+	onMount(() => {
 		// Read and set initial state synchronously
 		readInitialState();
 
 		// Ensure currentView is set to a default if not already set
-		if (!$currentView || $currentView === '') {
+		if (!$currentView) {
 			currentView.set('Map View');
 			currentToggle.set('Map View');
 		}
@@ -138,7 +133,7 @@
 	<TopBar
 		views={TOGGLES}
 		activeView={$currentView}
-		onView={setToggle}
+		onView={(v) => setToggle(v as ToggleKey)}
 		categoryLabels={$categoryLabels}
 		activeCategory={$activeCategoryValue}
 		onCategory={handleCategoryChange}
@@ -168,7 +163,6 @@
 						{:else if $currentView === 'Treemap View'}
 							<TreemapHero
 								family={$treemapFamily}
-								palette="plum"
 								showHeader={true}
 								showLegend={true}
 								onFirstRenderComplete={handleHeroRenderComplete}

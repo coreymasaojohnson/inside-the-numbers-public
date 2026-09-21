@@ -105,10 +105,10 @@
 		href="/fonts/avenirltstd-heavy-webfont.woff2"
 		as="font"
 		type="font/woff2"
-		crossorigin
+		crossorigin=""
 	/>
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
 	<link
 		href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600;700&display=swap"
 		rel="stylesheet"
@@ -125,7 +125,7 @@
 	<div class="sticky-header-wrapper">
 		<div class="sticky-header-brand-row">
 			<div class="sticky-brand">
-				<FlameMark size={28} color="#fff" />
+				<FlameMark size={28} />
 			</div>
 			<div class="sticky-title">Inside the Numbers</div>
 		</div>
@@ -152,7 +152,7 @@
 <div class="site-header-wrapper">
 	<header class="site-header">
 		<div class="brand">
-			<FlameMark size={40} color="#fff" />
+			<FlameMark size={40} />
 		</div>
 		<div class="site-title-block">
 			<div class="title-main">Inside the Numbers</div>
@@ -217,10 +217,6 @@
 		white-space: nowrap;
 	}
 
-	.sticky-topbar {
-		/* TopBar has its own styling */
-	}
-
 	/* Original Header Styles */
 	.site-header-wrapper {
 		display: flex;
@@ -237,7 +233,6 @@
 		width: 100%;
 		background-color: #9d3f8c;
 		color: #fff;
-		/*padding: 1.5rem 2rem;*/
 		padding: 0.85rem 2rem;
 	}
 
@@ -253,8 +248,6 @@
 	.title-main {
 		font-family: 'Avenir LT Std', Avenir, 'Helvetica Neue', system-ui, sans-serif;
 		font-weight: 900; /* Heavy */
-		/*   font-size: clamp(1.70rem, 2.7vw, 2.0rem); */
-		/* ~25.6px min → grows → ~38.4px max */
 		font-size: clamp(1.6rem, calc(1.2rem + 1.6vw), 2rem);
 		text-transform: uppercase;
 		letter-spacing: 0.09em;
@@ -274,12 +267,8 @@
 	}
 
 	.title-sub {
-		/*font-family: "Crimson Pro", Georgia, "Times New Roman", serif;
-    font-weight: 500; /* Medium */
-		font-family: Georgia, 'Times New Roman', serif; /* Changed font */
-		font-weight: 600; /* Reduced to Regular/400 for better contrast */
-		/*  font-size: clamp(1.10rem, 1.2vw, 1.10rem); */
-		/* ~16px min → grows → ~25.6px max */
+		font-family: Georgia, 'Times New Roman', serif;
+		font-weight: 600;
 		font-size: clamp(1rem, calc(0.8rem + 0.9vw), 1.09rem);
 		letter-spacing: 0.095em;
 		font-variant: small-caps;
@@ -290,17 +279,6 @@
 		margin-top: 0px;
 		margin-right: -4px;
 	}
-	/* This is no longer being used 
-  .action-word {
-    font-style: italic;
-    // text-transform: small-caps; is not a standard CSS value. 
-    //   We must use font-variant-caps: small-caps; for proper small caps. 
-   // font-variant-caps: small-caps; 
-    // Optionally, you could use a slightly different font weight 
-    //   if the italic/small-caps combo doesn't provide enough emphasis. 
-    text-transform: lowercase;
-    font-weight: 300; /* Extra Bold, since the subtitle is 700 
-  } */
 
 	/* Responsive adjustments */
 	@media (max-width: 768px) {

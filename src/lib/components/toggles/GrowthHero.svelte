@@ -8,13 +8,12 @@
 	// ── Config ───────────────────────────────────────────────────────────────
 	const BASELINE_YEAR = 2009;
 	const TOP_N = 8;
-	const HEIGHT = 600; // Reduced from 700 to better match other hero heights
-	const margin = { top: 60, right: 170, bottom: 40, left: 80 }; // Increased top margin for "Smaller Subgroups" legend
+	const HEIGHT = 600;
+	const margin = { top: 60, right: 170, bottom: 40, left: 80 };
 
 	const ASIAN_COLORS_SET = PALETTE.plum.slice(1, 1 + TOP_N);
 	const NHPI_COLORS_SET = PALETTE.ember.slice(1, 1 + TOP_N);
-	const ALL_CHART_COLORS = [...ASIAN_COLORS_SET, ...NHPI_COLORS_SET];
-	const BASELINE_COLOR = PALETTE.gray[5];
+		const BASELINE_COLOR = PALETTE.gray[5];
 
 	// ── Types ────────────────────────────────────────────────────────────────
 	type TimeSeriesData = Array<{ year: number; name: string; value: number }>;
@@ -46,7 +45,7 @@
 	let ro: ResizeObserver | null = null;
 	let roTimer: number | null = null;
 
-	// New state for transitions
+	// Transitions
 	let currentSvg: d3.Selection<SVGSVGElement, unknown, null, undefined> | null = null;
 	let isRendering = false;
 	let initialized = false;
@@ -63,7 +62,7 @@
 
 			dataTimeSeries = Array.isArray(timeSeries)
 				? timeSeries
-						.filter((d) => d.name !== 'Other Polynesian' && d.name !== 'Polynesian') // Exclude due to small sample size
+						.filter((d) => d.name !== 'Other Polynesian' && d.name !== 'Polynesian')
 						.map((d) => ({ ...d, value: isNaN(d.value) || !isFinite(d.value) ? 0 : d.value }))
 				: [];
 			ASIAN_GROUPS = Array.isArray(asianGroups) ? asianGroups : [];
@@ -104,7 +103,7 @@
 		currentView: 'combined' | 'asian' | 'nhpi',
 		currentMeasure: 'indexed' | 'absolute'
 	): LineGroupData[] {
-		if (currentMeasure === 'absolute') return []; // Only for indexed
+		if (currentMeasure === 'absolute') return [];
 		if (!ASIAN_GROUPS.length && !NHPI_GROUPS.length) return [];
 
 		let filtered = data;
@@ -125,7 +124,7 @@
 					}));
 				return { name, baseline, isAsian: ASIAN_GROUPS.includes(name), data: points };
 			})
-			.filter((line) => line.baseline > 0); // Only show groups with non-zero baseline
+			.filter((line) => line.baseline > 0);
 
 		lines.sort((a, b) => {
 			const av = a.data[a.data.length - 1]?.display ?? 0;
@@ -153,20 +152,7 @@
 		if (roTimer) window.clearTimeout(roTimer);
 	});
 
-	$: if (initialized) {
-		view;
-		renderChart();
-	}
-	$: if (initialized) {
-		measure;
-		renderChart();
-	}
-	$: if (initialized) {
-		YEARS;
-		renderChart();
-	}
-	$: if (initialized) {
-		dataTimeSeries;
+	$: if (initialized && view && measure && YEARS && dataTimeSeries) {
 		renderChart();
 	}
 
@@ -182,7 +168,6 @@
 
 		const width = cardContainer.clientWidth;
 
-		// Don't render if container isn't visible or has no width yet
 		if (!width || width < 100) {
 			console.log('[GrowthHero] render skipped - container not visible:', width);
 			return;
@@ -203,7 +188,6 @@
 		const shouldCrossFade = initialized && !reduceMotion && oldSvg;
 
 		if (shouldCrossFade) {
-			// --- Cross-Fade Transition ---
 			const newSvg = d3
 				.select(chartContainer)
 				.append('svg')
@@ -217,7 +201,6 @@
 
 			drawChartContents(newSvg, width, height, innerWidth, isStackedArea);
 
-			// Fade in new, fade out old
 			newSvg
 				.transition()
 				.delay(60)
@@ -237,7 +220,6 @@
 
 			currentSvg = newSvg;
 		} else {
-			// --- No Transition (first render or reduced motion) ---
 			d3.select(chartContainer).select('svg').remove();
 
 			const svg = d3
@@ -247,19 +229,15 @@
 				.attr('width', '100%')
 				.attr('height', HEIGHT);
 
-			// Start at opacity 0 on first mount, then immediately show
-			// This prevents double-fade with page-level transitions
 			if (!initialized) {
 				svg.style('opacity', '0');
 			}
 
 			drawChartContents(svg, width, height, innerWidth, isStackedArea);
 
-			// Immediately show (no transition) - let page-level crossfade handle animation
 			if (!initialized) {
 				svg.style('opacity', '1');
 				initialized = true;
-				// Call callback for initial page load fade-in
 				if (!firstRenderDispatched && onFirstRenderComplete) {
 					firstRenderDispatched = true;
 					setTimeout(() => onFirstRenderComplete(), 100);
@@ -290,7 +268,6 @@
 		let stackDataFiltered: any[];
 
 		if (isStackedArea) {
-			// Determine which groups to stack based on view
 			if (view === 'asian') {
 				keysToUse = ASIAN_GROUPS;
 				stackDataFiltered = stackData.map((row) => {
@@ -314,14 +291,12 @@
 				stackDataFiltered = stackData;
 			}
 
-			// Sort keys by their final year value (descending) to put largest groups at bottom
-			// This prevents small groups from clustering at the top
 			const finalYearRow = stackDataFiltered[stackDataFiltered.length - 1];
 			if (finalYearRow) {
 				keysToUse = [...keysToUse].sort((a, b) => {
 					const aVal = Number(finalYearRow[a] ?? 0);
 					const bVal = Number(finalYearRow[b] ?? 0);
-					return bVal - aVal; // Descending order
+					return bVal - aVal;
 				});
 			}
 
@@ -336,17 +311,14 @@
 			yMin = 0;
 			yMax = d3.max(stackedLayers, (L) => d3.max(L, (d) => d[1])) || 1;
 
-			// Add extra headroom for Combined view to make space for small groups legend
 			if (view === 'combined') {
-				yMax = Math.max(yMax * 1.1, 13000000); // Add 10% padding or minimum 13M
-			}
-			// Cap Asian view at 9M to give Cambodian space for inline label
-			else if (view === 'asian') {
-				yMax = Math.min(yMax * 1.05, 9000000); // Add 5% padding, cap at 9M
+				yMax = Math.max(yMax * 1.1, 13000000);
+			} else if (view === 'asian') {
+				yMax = Math.min(yMax * 1.05, 9000000);
 			}
 		} else {
 			const all = lineChartData.flatMap((d) => d.data.map((p) => p.display));
-			yMin = view === 'asian' ? 85 : 50; // Asian starts at 85%, Combined/NHPI at 50%
+			yMin = view === 'asian' ? 85 : 50;
 			yMax = d3.max(all) || 110;
 		}
 
@@ -364,7 +336,6 @@
 			.attr('stroke', '#ccc')
 			.attr('stroke-opacity', 0.5);
 
-		// Color scale with explicit mapping for Asian (plum) and NHPI (ember)
 		const colorScale = d3
 			.scaleOrdinal<string>()
 			.domain([...ASIAN_GROUPS, ...NHPI_GROUPS])
@@ -394,13 +365,12 @@
 				stackDataFiltered = stackData;
 			}
 
-			// Sort keys by their final year value (descending) to put largest groups at bottom
 			const finalYearRow = stackDataFiltered[stackDataFiltered.length - 1];
 			if (finalYearRow) {
 				keysToUse = [...keysToUse].sort((a, b) => {
 					const aVal = Number(finalYearRow[a] ?? 0);
 					const bVal = Number(finalYearRow[b] ?? 0);
-					return bVal - aVal; // Descending order
+					return bVal - aVal;
 				});
 			}
 
@@ -425,14 +395,10 @@
 				.attr('fill', (d) => colorScale(d.key) as string)
 				.attr('d', area);
 
-			// External labels for stacked area
-			// Only show inline labels for groups with population >= threshold
-			// Smaller groups go in a legend box to avoid overlap
-			// Threshold varies by view since NHPI populations are much smaller
 			const LABEL_THRESHOLD = view === 'nhpi' ? 40000 : view === 'asian' ? 120000 : 200000;
 			const lastYearData = stackDataFiltered[stackDataFiltered.length - 1];
 			const smallGroups: Array<{ key: string; value: number; color: string }> = [];
-			let topInlineLabelY = Infinity; // Track the topmost inline label position
+			let topInlineLabelY = Infinity;
 
 			if (lastYearData) {
 				const stackedForLabels = stack(stackDataFiltered);
@@ -445,9 +411,8 @@
 						const value = y1 - y0;
 
 						if (value >= LABEL_THRESHOLD) {
-							// Large group: inline label
 							const labelY = yScale(midY);
-							topInlineLabelY = Math.min(topInlineLabelY, labelY); // Track topmost
+							topInlineLabelY = Math.min(topInlineLabelY, labelY);
 
 							g.append('text')
 								.attr('class', 'end-label-area')
@@ -458,10 +423,9 @@
 								.style('font-weight', 600)
 								.style('fill', colorScale(layer.key) as string)
 								.text(
-									`${layer.key} (${formatNumber(value, { decimals: 0, notation: 'compact' })})`
+									`${layer.key} (${formatNumber(value, { notation: 'compact' })})`
 								);
 						} else {
-							// Small group: add to legend
 							smallGroups.push({
 								key: layer.key,
 								value: value,
@@ -471,23 +435,20 @@
 					}
 				});
 
-				// Draw legend for small groups if any exist, positioned above inline labels
 				if (smallGroups.length > 0) {
-					// Sort from lowest to highest population to match inline label ordering
 					smallGroups.sort((a, b) => a.value - b.value);
 
 					const lineHeight = 14;
-					const legendX = innerWidth + 5; // Same x as inline labels
+					const legendX = innerWidth + 5;
 					const titleHeight = 16;
 					const legendTotalHeight = titleHeight + smallGroups.length * lineHeight;
-					const legendY = topInlineLabelY - legendTotalHeight - 10; // 10px gap above topmost label
+					const legendY = topInlineLabelY - legendTotalHeight - 10;
 
 					const legend = g
 						.append('g')
 						.attr('class', 'small-groups-legend')
 						.attr('transform', `translate(${legendX}, ${legendY})`);
 
-					// Title
 					legend
 						.append('text')
 						.attr('x', 0)
@@ -497,11 +458,9 @@
 						.style('fill', '#6b7280')
 						.text('Smaller Subgroups:');
 
-					// Small group entries
 					smallGroups.forEach((grp, i) => {
 						const yPos = titleHeight + i * lineHeight;
 
-						// Color circle
 						legend
 							.append('circle')
 							.attr('cx', 5)
@@ -509,7 +468,6 @@
 							.attr('r', 4)
 							.attr('fill', grp.color);
 
-						// Label
 						legend
 							.append('text')
 							.attr('x', 14)
@@ -519,7 +477,7 @@
 							.style('font-weight', 500)
 							.style('fill', '#374151')
 							.text(
-								`${grp.key} (${formatNumber(grp.value, { decimals: 0, notation: 'compact' })})`
+								`${grp.key} (${formatNumber(grp.value, { notation: 'compact' })})`
 							);
 					});
 				}
@@ -597,8 +555,8 @@
 			.call(
 				d3
 					.axisBottom(xScale)
-					.tickFormat(d3.timeFormat('%Y'))
-					.tickValues(YEARS.map((y) => new Date(y, 0, 1))) // Show only actual data years
+					.tickFormat((d) => d3.timeFormat('%Y')(d as Date))
+					.tickValues(YEARS.map((y) => new Date(y, 0, 1)))
 			);
 
 		const yAxisFormat = isStackedArea
@@ -742,7 +700,7 @@
 						<span class="text-gray-600 mr-2">{item.name}:</span>
 						<span class="font-medium text-gray-900">
 							{#if item.isAbsolute}
-								{formatNumber(item.value, { decimals: 0, notation: 'compact' })}
+								{formatNumber(item.value, { notation: 'compact' })}
 							{:else}
 								{d3.format('.1f')(item.value)}%
 							{/if}

@@ -5,7 +5,6 @@
 </script>
 
 <svg
-	{title}
 	id="flame-mark"
 	role="img"
 	aria-label={title}
@@ -17,6 +16,9 @@
 	focusable="false"
 	preserveAspectRatio="xMidYMid meet"
 >
+	{#if title}
+		<title>{title}</title>
+	{/if}
 	<path
 		fill="currentColor"
 		d="
@@ -65,23 +67,6 @@ M307.089478,311.924622
 z"
 	/>
 </svg>
-
-<!-- SVG of the flame mark logo, but deprecated
-<svg
-  {title}
-  role="img"
-  aria-label={title}
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 128 128"
-  width={size}
-  height={size}
-  style="color: {color};"
->
-  <path fill="currentColor" d="M63.9 10c3.4 9.8-2.2 15.9.9 22.7 3.1 6.7 11.3 8.7 16.9 15.7 13.7 17 .7 45.2-24.2 50.7C33 104.4 12 87.2 14.4 62.1c1.8-19.2 16.1-29 26.5-39.6 5.9-6 7.2-11.9 6.2-18.6C53.4 6.4 58.9 7.9 63.9 10Z"/>
-  <path fill="#fff" d="M74.2 30.8c-3 6.4-6.3 12.5-.8 19.5 3.3 4.2 8.6 6.4 12 11.5 6.5 9.8 1.4 22.6-11.1 27.2-2.6.9-5.1 1.3-7.6 1.4 5.9-8.8 3.1-17.2-4.4-24.7-6.6-6.6-9-12.8-6.2-19.6 2.1-4.8 6.1-9 10.7-12.7 2.6-2.1 5-4 7.4-5.6Z"/>
-  <path fill="#fff" d="M47.3 41.3c-3.1 4.3-7.3 8.3-10.9 12.6-6.2 7.6-9.2 15.2-8.5 24 .2 2.2.8 4.3 1.7 6.3-6.2-10.3-4.1-23.3 5.5-35 3.7-4.5 8.4-8.5 12.2-12.1Z"/>
-</svg>
--->
 
 <style>
 	svg {

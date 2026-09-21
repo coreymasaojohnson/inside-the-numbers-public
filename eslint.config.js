@@ -22,9 +22,25 @@ export default defineConfig(
 			globals: { ...globals.browser, ...globals.node }
 		},
 		rules: {
-			// typescript-eslint strongly recommend that you do not use the no-undef lint rule on TypeScript projects.
-			// see: https://typescript-eslint.io/troubleshooting/faqs/eslint/#i-get-errors-from-the-no-undef-rule-about-global-variables-not-being-defined-even-though-there-are-no-typescript-errors
-			'no-undef': 'off'
+			// typescript-eslint strongly recommends turning off no-undef on TypeScript projects
+			'no-undef': 'off',
+			// Allow explicit 'any' for complex D3 selections, GeoJSON topology, and raw API responses
+			'@typescript-eslint/no-explicit-any': 'off',
+			// Ignore catch errors and allow variables/args starting with underscore
+			'@typescript-eslint/no-unused-vars': [
+				'error',
+				{
+					argsIgnorePattern: '^_',
+					varsIgnorePattern: '^_',
+					caughtErrors: 'none'
+				}
+			],
+			// Allow Svelte reactive expressions (e.g., $: if (scope || category) ...)
+			'@typescript-eslint/no-unused-expressions': 'off',
+			// Svelte 5 runes transition: allow standard JavaScript Map in components
+			'svelte/prefer-svelte-reactivity': 'off',
+			// Relax strict each-key requirement for static UI lists
+			'svelte/require-each-key': 'off'
 		}
 	},
 	{

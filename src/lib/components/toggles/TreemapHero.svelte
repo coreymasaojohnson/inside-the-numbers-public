@@ -210,10 +210,10 @@
 
 		const treemapHeight = Math.max(340, Math.round(width * 0.55));
 		const legendHeight = showLegend ? getLegendHeight(width) : 0;
-		const totalHeight = treemapHeight + legendHeight + (showLegend ? 20 : 0);
+		const _totalHeight = treemapHeight + legendHeight + (showLegend ? 20 : 0);
 
 		// Pre-allocate height to avoid container collapse
-		(container as HTMLDivElement).style.minHeight = `${totalHeight}px`;
+		(container as HTMLDivElement).style.minHeight = `${_totalHeight}px`;
 
 		const reduceMotion =
 			typeof window !== 'undefined' &&
@@ -239,14 +239,14 @@
 				.style('top', '0')
 				.style('left', '0')
 				.style('opacity', '0')
-				.attr('viewBox', `0 0 ${width} ${totalHeight}`)
+				.attr('viewBox', `0 0 ${width} ${_totalHeight}`)
 				.attr('width', width)
-				.attr('height', totalHeight);
+				.attr('height', _totalHeight);
 
 			newSvg.append('g').attr('class', 'nodes');
 			newSvg.append('g').attr('class', 'legend');
 
-			drawTreemapContents(newSvg, width, treemapHeight, totalHeight);
+			drawTreemapContents(newSvg, width, treemapHeight, _totalHeight);
 
 			// Fade in new, fade out old
 			newSvg
@@ -288,14 +288,14 @@
 			}
 
 			svg
-				.attr('viewBox', `0 0 ${width} ${totalHeight}`)
+				.attr('viewBox', `0 0 ${width} ${_totalHeight}`)
 				.attr('width', width)
-				.attr('height', totalHeight);
+				.attr('height', _totalHeight);
 
 			svg.select('.nodes').selectAll('*').remove();
 			svg.select('.legend').selectAll('*').remove();
 
-			drawTreemapContents(svg, width, treemapHeight, totalHeight);
+			drawTreemapContents(svg, width, treemapHeight, _totalHeight);
 
 			// Mark as initialized after first render
 			if (!initialized) {
@@ -317,7 +317,7 @@
 		svgSel: d3.Selection<SVGSVGElement, unknown, null, undefined>,
 		width: number,
 		treemapHeight: number,
-		totalHeight: number
+		_totalHeight: number
 	) {
 		// Empty / loading states
 		if (!data?.length) {

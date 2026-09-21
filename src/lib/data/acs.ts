@@ -92,7 +92,7 @@ async function getJSON<T>(url: string): Promise<T> {
 	let text = '';
 	try {
 		text = await res.text();
-	} catch {
+	} catch (e) {
 		// noop
 	}
 	if (!res.ok) {
@@ -141,7 +141,7 @@ function generateRaceSubgroupVariables(
 function hasLS() {
 	try {
 		return typeof localStorage !== 'undefined';
-	} catch {
+	} catch (e) {
 		return false;
 	}
 }
@@ -514,7 +514,7 @@ export async function getNhpiSubgroupsTimeSeries(opts: {
 /* ===================== OTHER EXPORTS (Foreign Born / Totals) ===================== */
 
 // 💡 Foreign-born variables for defensive fallback (still needed for foreign-born map view)
-const FALLBACK_FOREIGN_VARS: Record<'C05003D' | 'C05003E', string[]> = {
+const _FALLBACK_FOREIGN_VARS: Record<'C05003D' | 'C05003E', string[]> = {
 	C05003D: ['C05003D_004E', 'C05003D_007E'], // Asian: Male foreign-born, Female foreign-born
 	C05003E: ['C05003E_004E', 'C05003E_007E'] // NHPI:  Male foreign-born, Female foreign-born
 };
@@ -600,7 +600,7 @@ function loadFromLocalStorage(key: string): AapiCacheEntry | undefined {
 		const parsed = JSON.parse(raw) as AapiCacheEntry;
 		if (Date.now() - parsed.ts > ONE_DAY) return; // expired
 		return parsed;
-	} catch {
+	} catch (e) {
 		return;
 	}
 }

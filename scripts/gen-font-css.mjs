@@ -1,6 +1,5 @@
 // scripts/gen-font-css.mjs
 import { readdir, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
 
 const FONTS_DIR = 'static/fonts';
 const OUT_FILE = 'src/lib/styles/fonts.generated.css';

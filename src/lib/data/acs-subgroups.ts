@@ -6,7 +6,6 @@ import {
 	NHPI_COMPUTED_OTHER,
 	ACS_SUBGROUPS_CONFIG,
 	type CanonicalRule,
-	type AcsFamilyKey
 } from './subgroup_rules';
 
 export type TreemapRow = { name: string; value: number };
@@ -14,8 +13,6 @@ export type AcsType = 'acs1' | 'acs5';
 
 // ── Real fetcher with API key (Vite: static access only) ──────────────────
 // Vite will replace this at build time. It’s fine in SSR and client builds.
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error Vite injects type at build
 const CENSUS_API_KEY: string | undefined = import.meta.env.VITE_CENSUS_KEY;
 
 async function getJSON<T>(url: string): Promise<T> {
