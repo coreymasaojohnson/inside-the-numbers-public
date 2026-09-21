@@ -1,97 +1,97 @@
 /* Avenir LT Std */
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-light-webfont.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-light-webfont.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-lightoblique-webfont.woff2") format("woff2");
-  font-weight: 300;
-  font-style: oblique;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-lightoblique-webfont.woff2') format('woff2');
+	font-weight: 300;
+	font-style: oblique;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-book-webfont.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-book-webfont.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-bookoblique-webfont.woff2") format("woff2");
-  font-weight: 400;
-  font-style: oblique;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-bookoblique-webfont.woff2') format('woff2');
+	font-weight: 400;
+	font-style: oblique;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-roman-webfont.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-roman-webfont.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-oblique-webfont.woff2") format("woff2");
-  font-weight: 500;
-  font-style: oblique;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-oblique-webfont.woff2') format('woff2');
+	font-weight: 500;
+	font-style: oblique;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-medium-webfont.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-medium-webfont.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-mediumoblique-webfont.woff2") format("woff2");
-  font-weight: 600;
-  font-style: oblique;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-mediumoblique-webfont.woff2') format('woff2');
+	font-weight: 600;
+	font-style: oblique;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-heavy-webfont.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-heavy-webfont.woff2') format('woff2');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-heavyoblique-webfont.woff2") format("woff2");
-  font-weight: 800;
-  font-style: oblique;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-heavyoblique-webfont.woff2') format('woff2');
+	font-weight: 800;
+	font-style: oblique;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-black-webfont.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-black-webfont.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
 }
 
 @font-face {
-  font-family: "Avenir LT Std";
-  src: url("/fonts/avenirltstd-blackoblique-webfont.woff2") format("woff2");
-  font-weight: 900;
-  font-style: oblique;
-  font-display: swap;
+	font-family: 'Avenir LT Std';
+	src: url('/fonts/avenirltstd-blackoblique-webfont.woff2') format('woff2');
+	font-weight: 900;
+	font-style: oblique;
+	font-display: swap;
 }

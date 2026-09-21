@@ -1,24 +1,25 @@
 <script>
-  export let size = 45;                 // px
-  export let title = 'flame mark';      // a11y
- // export let color = 'fff';    // inherit by default
+	export let size = 45; // px
+	export let title = 'flame mark'; // a11y
+	// export let color = 'fff';    // inherit by default
 </script>
 
 <svg
-  {title}
-  id = 'flame-mark'
-  role="img"
-  aria-label={title}
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="233 137 148 238"
-  width={size}
-  height={size}
-  aria-hidden="true"
-  focusable="false"
-  preserveAspectRatio="xMidYMid meet"
+	{title}
+	id="flame-mark"
+	role="img"
+	aria-label={title}
+	xmlns="http://www.w3.org/2000/svg"
+	viewBox="233 137 148 238"
+	width={size}
+	height={size}
+	aria-hidden="true"
+	focusable="false"
+	preserveAspectRatio="xMidYMid meet"
 >
-<path fill="currentColor"
-	d="
+	<path
+		fill="currentColor"
+		d="
 M272.436859,172.491119 
 	C280.292755,160.390259 288.782410,149.291245 299.550964,139.041855 
 	C299.987854,140.693466 300.348785,141.318893 300.275391,141.888336 
@@ -44,9 +45,11 @@ M272.436859,172.491119
 	C293.083923,287.722290 283.108704,278.181122 274.360840,267.425354 
 	C253.418289,241.675766 251.093613,213.983124 265.637573,184.540955 
 	C267.623566,180.520599 270.038361,176.712051 272.436859,172.491119 
-z"/>
-<path fill="currentColor"
-	d="
+z"
+	/>
+	<path
+		fill="currentColor"
+		d="
 M307.089478,311.924622 
 	C314.476776,320.011627 320.874603,328.452118 322.852203,339.059448 
 	C324.981293,350.479126 323.284882,361.540344 316.729370,371.487518 
@@ -59,11 +62,9 @@ M307.089478,311.924622
 	C247.662033,231.920990 248.254990,237.952942 250.233276,243.716446 
 	C254.993835,257.585663 263.725983,268.771545 273.710938,279.193054 
 	C284.418701,290.368988 296.508362,300.123962 307.089478,311.924622 
-z"/>
+z"
+	/>
 </svg>
-<style>
-  svg { display: inline-block; color: #fff; } /* inherits white in header */
-</style>
 
 <!-- SVG of the flame mark logo, but deprecated
 <svg
@@ -81,3 +82,10 @@ z"/>
   <path fill="#fff" d="M47.3 41.3c-3.1 4.3-7.3 8.3-10.9 12.6-6.2 7.6-9.2 15.2-8.5 24 .2 2.2.8 4.3 1.7 6.3-6.2-10.3-4.1-23.3 5.5-35 3.7-4.5 8.4-8.5 12.2-12.1Z"/>
 </svg>
 -->
+
+<style>
+	svg {
+		display: inline-block;
+		color: #fff;
+	} /* inherits white in header */
+</style>

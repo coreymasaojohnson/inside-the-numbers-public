@@ -1,126 +1,145 @@
 @import './tokens.css';
-@import "$lib/styles/fonts.generated.css";
+@import '$lib/styles/fonts.generated.css';
 
-
-html, body { height: 100%; }
+html,
 body {
-  margin: 0;
-  background-color: #fae9f4; /* fallback */
-  background-image: linear-gradient(
-    to bottom,
-    #fae9f4 0,       /* top half of the 2px tile */
-    #fae9f4 50%,
-    #ecb2df 50%,     /* bottom half of the 2px tile */
-    #ecb2df 100%
-  );
-  background-size: 100% 2px; /* 1px + 1px, tile repeats cleanly */
-  font-family:var(--font-serif);
-  font-size:var(--text-base);
-  line-height:1.6;
-  color:var(--color-text);
+	height: 100%;
+}
+body {
+	margin: 0;
+	background-color: #fae9f4; /* fallback */
+	background-image: linear-gradient(
+		to bottom,
+		#fae9f4 0,
+		/* top half of the 2px tile */ #fae9f4 50%,
+		#ecb2df 50%,
+		/* bottom half of the 2px tile */ #ecb2df 100%
+	);
+	background-size: 100% 2px; /* 1px + 1px, tile repeats cleanly */
+	font-family: var(--font-serif);
+	font-size: var(--text-base);
+	line-height: 1.6;
+	color: var(--color-text);
 }
 
 /* Headings */
-h1, h2, h3, h4, h5 {
-  color: var(--color-primary);
-  font-family: var(--font-sans);
-  font-weight: 700;
-  text-transform: uppercase; /* to match PDF design */
-  letter-spacing: 0.04em;
-  margin-top: var(--space-lg);
-  margin-bottom: var(--space-sm);
+h1,
+h2,
+h3,
+h4,
+h5 {
+	color: var(--color-primary);
+	font-family: var(--font-sans);
+	font-weight: 700;
+	text-transform: uppercase; /* to match PDF design */
+	letter-spacing: 0.04em;
+	margin-top: var(--space-lg);
+	margin-bottom: var(--space-sm);
 }
 
 /* Paragraphs */
 p {
-  color: var(--color-text);
-  margin-bottom: var(--space-md);
-  max-width: 70ch;
+	color: var(--color-text);
+	margin-bottom: var(--space-md);
+	max-width: 70ch;
 }
 .subhead {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  text-transform: none;
-  color: var(--color-primary);
-  font-size: var(--text-lg);
-  margin-bottom: var(--space-xs);
+	font-family: var(--font-sans);
+	font-weight: 600;
+	text-transform: none;
+	color: var(--color-primary);
+	font-size: var(--text-lg);
+	margin-bottom: var(--space-xs);
 }
 
-h1{font-size:var(--text-4xl)} h2{font-size:var(--text-3xl)}
-h3{font-size:var(--text-2xl)} h4{font-size:var(--text-xl)}
+h1 {
+	font-size: var(--text-4xl);
+}
+h2 {
+	font-size: var(--text-3xl);
+}
+h3 {
+	font-size: var(--text-2xl);
+}
+h4 {
+	font-size: var(--text-xl);
+}
 
-p{margin:0 0 var(--space-md);max-width:70ch}
+p {
+	margin: 0 0 var(--space-md);
+	max-width: 70ch;
+}
 
 /* Header/Period Label (Left-aligned, top of chart) */
 .header-label {
-  font-family: "avenirltstd", "Times New Roman", serif;
-  font-weight: 600;
-  font-size: 0.75rem;
-  font-variant-caps: normal;
-  text-transform: uppercase;
-  /* Prefer real small caps; fall back gracefully 
+	font-family: 'avenirltstd', 'Times New Roman', serif;
+	font-weight: 600;
+	font-size: 0.75rem;
+	font-variant-caps: normal;
+	text-transform: uppercase;
+	/* Prefer real small caps; fall back gracefully 
   font-variant-caps: all-small-caps;
   font-feature-settings: "c2sc" 1, "smcp" 1; */
-  letter-spacing: 0.05em;
-  color: #000000;
-  text-align: left;
+	letter-spacing: 0.05em;
+	color: #000000;
+	text-align: left;
 }
 
 /* Source/Reference Label (Right-aligned, bottom of chart) */
 .source-label {
-  font-family: Georgia, "Times New Roman", serif;
-  font-weight: 400;
-  font-size: 0.75rem;
-  /*font-variant-caps: small-caps;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-weight: 400;
+	font-size: 0.75rem;
+	/*font-variant-caps: small-caps;
   font-feature-settings: "smcp" 1; */
-  letter-spacing: 0.05em;
-  color: #6b7280;
-  margin-top: 0.0rem;
-  line-height: 1.5;
-  text-align: right;
+	letter-spacing: 0.05em;
+	color: #6b7280;
+	margin-top: 0rem;
+	line-height: 1.5;
+	text-align: right;
 }
 
 /* === Page Layout Structure === */
 
 .main-content {
-  background-color: #fff;
-  color: var(--color-text);
-  max-width: 1200px; /*this matches the header width */
-  margin: 0 auto;
-  /*padding: 0rem; /*3rem padding was too much */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	background-color: #fff;
+	color: var(--color-text);
+	max-width: 1200px; /*this matches the header width */
+	margin: 0 auto;
+	/*padding: 0rem; /*3rem padding was too much */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .main-content {
-  background-color: var(--color-bg);
-  /* optional light separation from the orange frame */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+	background-color: var(--color-bg);
+	/* optional light separation from the orange frame */
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 /* === Site Header === */
 .site-header {
-  background-color: var(--color-accent-deep); /* rich orange band */
-  color: #fff;
-  padding: 1.5rem 2rem;
-  width: 100%;
-  display: flex;
-  justify-content: center; /* center content horizontally */
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	background-color: var(--color-accent-deep); /* rich orange band */
+	color: #fff;
+	padding: 1.5rem 2rem;
+	width: 100%;
+	display: flex;
+	justify-content: center; /* center content horizontally */
+	align-items: center;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .header-inner {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  max-width: 900px;
-  width: 100%;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	max-width: 900px;
+	width: 100%;
 }
 
 /* Flame color inherits from parent */
 .site-header svg {
-  color: #fff;
-  flex-shrink: 0;
+	color: #fff;
+	flex-shrink: 0;
 }
 
 /* Title styling */
@@ -139,65 +158,65 @@ p{margin:0 0 var(--space-md);max-width:70ch}
 
 /* === Site Header === */
 .site-header {
-  background-color: var(--color-accent-deep);
-  color: #fff;
-  padding: 1.25rem 2rem;
-  width: 100%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	background-color: var(--color-accent-deep);
+	color: #fff;
+	padding: 1.25rem 2rem;
+	width: 100%;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .header-inner {
-  display: flex;
-  justify-content: space-between; /* logo left, title right */
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+	display: flex;
+	justify-content: space-between; /* logo left, title right */
+	align-items: center;
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .brand svg {
-  color: #fff;
-  display: block;
+	color: #fff;
+	display: block;
 }
 
 .site-title {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-size: var(--text-2xl);
-  margin: 0;
-  color: #fff;
-  text-align: right;
+	font-family: var(--font-sans);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	font-size: var(--text-2xl);
+	margin: 0;
+	color: #fff;
+	text-align: right;
 }
 
 /* Shared container used site-wide */
 .site-container {
-  max-width: var(--container-max);
-  margin-inline: auto;
-  padding-inline: var(--container-pad);
+	max-width: var(--container-max);
+	margin-inline: auto;
+	padding-inline: var(--container-pad);
 }
 
 /* Header band */
 .site-header {
-  background: var(--color-header-bg);
-  color: var(--color-header-fg);
+	background: var(--color-header-bg);
+	color: var(--color-header-fg);
 }
 
 /* Grid inside the header (logo left, title right) */
 .site-header-bar {
-  display: grid;
-  grid-template-columns: minmax(160px, 220px) 1fr;
-  align-items: center;
-  gap: 1.5rem;
-  padding-block: var(--header-block);
+	display: grid;
+	grid-template-columns: minmax(160px, 220px) 1fr;
+	align-items: center;
+	gap: 1.5rem;
+	padding-block: var(--header-block);
 }
 
 /* Title styling moved out of inline <style> */
 .site-title {
-  font-family: "Avenir LT Std", "Avenir", "Helvetica Neue", system-ui, sans-serif;
-  font-weight: 900;
-  letter-spacing: -0.002em;
-  font-size: clamp(1.25rem, 1vw + 1rem, 3rem); /* desktop-friendly */
-  line-height: 1.1;
-  margin: 0;
+	font-family: 'Avenir LT Std', 'Avenir', 'Helvetica Neue', system-ui, sans-serif;
+	font-weight: 900;
+	letter-spacing: -0.002em;
+	font-size: clamp(1.25rem, 1vw + 1rem, 3rem); /* desktop-friendly */
+	line-height: 1.1;
+	margin: 0;
 }

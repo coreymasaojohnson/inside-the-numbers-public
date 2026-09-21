@@ -1,50 +1,62 @@
 /* tighter hero variant for map panels */
-.hero--tight { padding-top: var(--space-sm); padding-bottom: var(--space-md); }
+.hero--tight {
+	padding-top: var(--space-sm);
+	padding-bottom: var(--space-md);
+}
 
 /* =====================================
    BUTTONS — Flat / Outline Style
    ===================================== */
 
 .button {
-  font-family: var(--font-sans);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  background-color: transparent;
-  color: var(--color-accent);
-  border: 1px solid var(--color-accent);
-  padding: 0.6rem 1.25rem;
-  border-radius: 0; /* squared edges */
-  cursor: pointer;
-  transition: color var(--motion-fast),
-              background-color var(--motion-fast),
-              border-color var(--motion-fast);
+	font-family: var(--font-sans);
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	background-color: transparent;
+	color: var(--color-accent);
+	border: 1px solid var(--color-accent);
+	padding: 0.6rem 1.25rem;
+	border-radius: 0; /* squared edges */
+	cursor: pointer;
+	transition:
+		color var(--motion-fast),
+		background-color var(--motion-fast),
+		border-color var(--motion-fast);
 }
 
 .button:hover {
-  background-color: var(--color-accent);
-  color: #fff;
-  border-color: var(--color-accent);
+	background-color: var(--color-accent);
+	color: #fff;
+	border-color: var(--color-accent);
 }
 
 .button:focus {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 2px;
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
 }
 
 .button:disabled,
-.button[aria-disabled="true"] {
-  opacity: 0.6;
-  cursor: not-allowed;
+.button[aria-disabled='true'] {
+	opacity: 0.6;
+	cursor: not-allowed;
 }
 
 /* Optional sizing variants */
-.button--sm { padding: 0.4rem 0.9rem; font-size: 0.875rem; }
-.button--lg { padding: 0.8rem 1.5rem; font-size: 1.125rem; }
+.button--sm {
+	padding: 0.4rem 0.9rem;
+	font-size: 0.875rem;
+}
+.button--lg {
+	padding: 0.8rem 1.5rem;
+	font-size: 1.125rem;
+}
 
 /* Motion preference */
 @media (prefers-reduced-motion: reduce) {
-  .button { transition: none; }
+	.button {
+		transition: none;
+	}
 }
 
 /* =====================================
@@ -52,18 +64,27 @@
    ===================================== */
 
 .site-container {
-  max-width: var(--container-max);
-  margin-inline: auto;
-  padding-inline: var(--container-pad);
+	max-width: var(--container-max);
+	margin-inline: auto;
+	padding-inline: var(--container-pad);
 }
 
 /* Remove horizontal padding for full-width hero content */
 .site-container--flush {
-  padding-inline: 0;
+	padding-inline: 0;
 }
 
-.site-header { background: var(--color-header-bg); color: var(--color-header-fg); }
-.site-header-bar { display: grid; grid-template-columns: minmax(160px, 220px) 1fr; align-items: center; gap: 1.5rem; padding-block: var(--header-block); }
+.site-header {
+	background: var(--color-header-bg);
+	color: var(--color-header-fg);
+}
+.site-header-bar {
+	display: grid;
+	grid-template-columns: minmax(160px, 220px) 1fr;
+	align-items: center;
+	gap: 1.5rem;
+	padding-block: var(--header-block);
+}
 
 /*
 .site-header-bar {
@@ -76,64 +97,75 @@
 
 /* Base hero */
 .hero {
-  /* default hero uses variable; we’ll zero it in --flush */
-  --hero-padding-block: 0;
-  background: transparent;
-  padding-block: var(--hero-padding-block);
+	/* default hero uses variable; we’ll zero it in --flush */
+	--hero-padding-block: 0;
+	background: transparent;
+	padding-block: var(--hero-padding-block);
 }
 
 /* Spacing modifiers (set the custom property on the same element) */
-.hero--tight   { --hero-padding-block: 1rem; }
-.hero--compact { --hero-padding-block: 0.5rem; }
-.hero--flush   { --hero-padding-block: 0; }
+.hero--tight {
+	--hero-padding-block: 1rem;
+}
+.hero--compact {
+	--hero-padding-block: 0.5rem;
+}
+.hero--flush {
+	--hero-padding-block: 0;
+}
 /* Slightly reduced vertical padding */
-.hero--snug { --hero-padding-block: 1.75rem; }      /* default ~3rem */
+.hero--snug {
+	--hero-padding-block: 1.75rem;
+} /* default ~3rem */
 @media (min-width: 1024px) {
-  .hero--snug { --hero-padding-block: 2rem; }       /* a touch looser on desktop */
+	.hero--snug {
+		--hero-padding-block: 2rem;
+	} /* a touch looser on desktop */
 }
 
 /* Base hero uses a variable for vertical padding */
-.hero { 
-  --hero-padding-block: 0; 
-  padding-block: var(--hero-padding-block);
-  margin: 0;                 /* ← ensure no default margins */
-  background: transparent;
+.hero {
+	--hero-padding-block: 0;
+	padding-block: var(--hero-padding-block);
+	margin: 0; /* ← ensure no default margins */
+	background: transparent;
 }
-.hero--flush { --hero-padding-block: 0; }
+.hero--flush {
+	--hero-padding-block: 0;
+}
 
 /* (keep your .site-container gutters as-is to set page width) */
 /* Full-bleed section that centers to viewport */
 .hero--bleed {
-  width: 100vw;
-  margin-left: 50%;
-  transform: translateX(-50%);
+	width: 100vw;
+	margin-left: 50%;
+	transform: translateX(-50%);
 }
-
 
 /* =====================================
    HERO BANNER (legacy marketing sections)
    ===================================== */
 
 .hero-banner {
-  background: var(--color-accent-deep);
-  color: #fff;
-  text-align: center;
-  padding: var(--space-xl) var(--space-md);
+	background: var(--color-accent-deep);
+	color: #fff;
+	text-align: center;
+	padding: var(--space-xl) var(--space-md);
 }
 
 .hero-banner h1 {
-  color: #fff;
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: var(--text-4xl);
+	color: #fff;
+	font-family: var(--font-sans);
+	font-weight: 700;
+	font-size: var(--text-4xl);
 }
 
 .hero-banner p {
-  font-family: var(--font-serif);
-  font-size: var(--text-lg);
-  max-width: 60ch;
-  margin: 1rem auto 2rem;
-  color: rgba(255, 255, 255, 0.9);
+	font-family: var(--font-serif);
+	font-size: var(--text-lg);
+	max-width: 60ch;
+	margin: 1rem auto 2rem;
+	color: rgba(255, 255, 255, 0.9);
 }
 
 /* =====================================
@@ -141,17 +173,17 @@
    ===================================== */
 
 .card {
-  background: var(--color-bg-alt);
-  border-radius: 0.75rem;
-  padding: var(--space-lg);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  margin-bottom: var(--space-lg);
+	background: var(--color-bg-alt);
+	border-radius: 0.75rem;
+	padding: var(--space-lg);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+	margin-bottom: var(--space-lg);
 }
 
 .card h3 {
-  font-family: var(--font-sans);
-  color: var(--color-primary);
-  margin-bottom: var(--space-sm);
+	font-family: var(--font-sans);
+	color: var(--color-primary);
+	margin-bottom: var(--space-sm);
 }
 
 /* =====================================
@@ -159,12 +191,16 @@
    ===================================== */
 /* Default band (keeps variables for other pages) */
 .feature-band {
-  background: var(--band-bg);
-  padding-block: calc(var(--band-pad-block) + var(--header-block));
+	background: var(--band-bg);
+	padding-block: calc(var(--band-pad-block) + var(--header-block));
 }
 
 /* Tight variant for pages where TopBar must be flush */
-.feature-band--tight { padding-block: 0 !important; }
+.feature-band--tight {
+	padding-block: 0 !important;
+}
 
 /* Optional: if a hairline gap remains under the header, lift slightly */
-.site-header + .feature-band--tight { margin-top: -0.25rem; } /* optional micro-lift */
+.site-header + .feature-band--tight {
+	margin-top: -0.25rem;
+} /* optional micro-lift */

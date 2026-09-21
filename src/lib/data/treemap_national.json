@@ -1,13 +1,13 @@
 {
-  "name": "AAPI",
-  "children": [
-    { "name": "Chinese",      "value": 4200000 },
-    { "name": "Indian",       "value": 4100000 },
-    { "name": "Filipino",     "value": 2600000 },
-    { "name": "Vietnamese",   "value": 1700000 },
-    { "name": "Korean",       "value": 1700000 },
-    { "name": "Japanese",     "value": 1500000 },
-    { "name": "Other Asian",  "value": 2200000 },
-    { "name": "NHPI",         "value": 1400000 }
-  ]
+	"name": "AAPI",
+	"children": [
+		{ "name": "Chinese", "value": 4200000 },
+		{ "name": "Indian", "value": 4100000 },
+		{ "name": "Filipino", "value": 2600000 },
+		{ "name": "Vietnamese", "value": 1700000 },
+		{ "name": "Korean", "value": 1700000 },
+		{ "name": "Japanese", "value": 1500000 },
+		{ "name": "Other Asian", "value": 2200000 },
+		{ "name": "NHPI", "value": 1400000 }
+	]
 }

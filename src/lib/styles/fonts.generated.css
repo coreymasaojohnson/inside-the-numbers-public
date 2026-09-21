@@ -1,411 +1,479 @@
 /* AUTO-GENERATED. Edit the generator or post-process as needed. */
-:root{
-  --font-sans: "Avenir LT Std", system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", Helvetica, sans-serif;
+:root {
+	--font-sans:
+		'Avenir LT Std', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, 'Noto Sans',
+		'Helvetica Neue', Helvetica, sans-serif;
 }
 
 /* AdobeJensonPro */
-@font-face{
-  font-family:"AdobeJensonPro";
-  src:url("/fonts/AdobeJensonPro.woff2") format("woff2");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonPro';
+	src: url('/fonts/AdobeJensonPro.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonpro{font-family:"AdobeJensonPro", var(--font-sans);}
+.font-adobejensonpro {
+	font-family: 'AdobeJensonPro', var(--font-sans);
+}
 
 /* AdobeJensonProBold */
-@font-face{
-  font-family:"AdobeJensonProBold";
-  src:url("/fonts/AdobeJensonProBold.woff2") format("woff2");
-  font-weight:700;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProBold';
+	src: url('/fonts/AdobeJensonProBold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprobold{font-family:"AdobeJensonProBold", var(--font-sans);}
+.font-adobejensonprobold {
+	font-family: 'AdobeJensonProBold', var(--font-sans);
+}
 
 /* AdobeJensonProBoldCaption */
-@font-face{
-  font-family:"AdobeJensonProBoldCaption";
-  src:url("/fonts/AdobeJensonProBoldCaption.woff2") format("woff2");
-  font-weight:700;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProBoldCaption';
+	src: url('/fonts/AdobeJensonProBoldCaption.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonproboldcaption{font-family:"AdobeJensonProBoldCaption", var(--font-sans);}
+.font-adobejensonproboldcaption {
+	font-family: 'AdobeJensonProBoldCaption', var(--font-sans);
+}
 
 /* AdobeJensonProBoldDisplay */
-@font-face{
-  font-family:"AdobeJensonProBoldDisplay";
-  src:url("/fonts/AdobeJensonProBoldDisplay.woff2") format("woff2");
-  font-weight:700;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProBoldDisplay';
+	src: url('/fonts/AdobeJensonProBoldDisplay.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprobolddisplay{font-family:"AdobeJensonProBoldDisplay", var(--font-sans);}
+.font-adobejensonprobolddisplay {
+	font-family: 'AdobeJensonProBoldDisplay', var(--font-sans);
+}
 
 /* AdobeJensonProBoldItalic */
-@font-face{
-  font-family:"AdobeJensonProBoldItalic";
-  src:url("/fonts/AdobeJensonProBoldItalic.woff2") format("woff2");
-  font-weight:700;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProBoldItalic';
+	src: url('/fonts/AdobeJensonProBoldItalic.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprobolditalic{font-family:"AdobeJensonProBoldItalic", var(--font-sans);}
+.font-adobejensonprobolditalic {
+	font-family: 'AdobeJensonProBoldItalic', var(--font-sans);
+}
 
 /* AdobeJensonProBoldItalicCaption */
-@font-face{
-  font-family:"AdobeJensonProBoldItalicCaption";
-  src:url("/fonts/AdobeJensonProBoldItalicCaption.woff2") format("woff2");
-  font-weight:700;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProBoldItalicCaption';
+	src: url('/fonts/AdobeJensonProBoldItalicCaption.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprobolditaliccaption{font-family:"AdobeJensonProBoldItalicCaption", var(--font-sans);}
+.font-adobejensonprobolditaliccaption {
+	font-family: 'AdobeJensonProBoldItalicCaption', var(--font-sans);
+}
 
 /* AdobeJensonProBoldItalicDisplay */
-@font-face{
-  font-family:"AdobeJensonProBoldItalicDisplay";
-  src:url("/fonts/AdobeJensonProBoldItalicDisplay.woff2") format("woff2");
-  font-weight:700;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProBoldItalicDisplay';
+	src: url('/fonts/AdobeJensonProBoldItalicDisplay.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprobolditalicdisplay{font-family:"AdobeJensonProBoldItalicDisplay", var(--font-sans);}
+.font-adobejensonprobolditalicdisplay {
+	font-family: 'AdobeJensonProBoldItalicDisplay', var(--font-sans);
+}
 
 /* AdobeJensonProBoldItalicSubhead */
-@font-face{
-  font-family:"AdobeJensonProBoldItalicSubhead";
-  src:url("/fonts/AdobeJensonProBoldItalicSubhead.woff2") format("woff2");
-  font-weight:700;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProBoldItalicSubhead';
+	src: url('/fonts/AdobeJensonProBoldItalicSubhead.woff2') format('woff2');
+	font-weight: 700;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprobolditalicsubhead{font-family:"AdobeJensonProBoldItalicSubhead", var(--font-sans);}
+.font-adobejensonprobolditalicsubhead {
+	font-family: 'AdobeJensonProBoldItalicSubhead', var(--font-sans);
+}
 
 /* AdobeJensonProBoldSubhead */
-@font-face{
-  font-family:"AdobeJensonProBoldSubhead";
-  src:url("/fonts/AdobeJensonProBoldSubhead.woff2") format("woff2");
-  font-weight:700;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProBoldSubhead';
+	src: url('/fonts/AdobeJensonProBoldSubhead.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonproboldsubhead{font-family:"AdobeJensonProBoldSubhead", var(--font-sans);}
+.font-adobejensonproboldsubhead {
+	font-family: 'AdobeJensonProBoldSubhead', var(--font-sans);
+}
 
 /* AdobeJensonProCaption */
-@font-face{
-  font-family:"AdobeJensonProCaption";
-  src:url("/fonts/AdobeJensonProCaption.woff2") format("woff2");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProCaption';
+	src: url('/fonts/AdobeJensonProCaption.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprocaption{font-family:"AdobeJensonProCaption", var(--font-sans);}
+.font-adobejensonprocaption {
+	font-family: 'AdobeJensonProCaption', var(--font-sans);
+}
 
 /* AdobeJensonProDisplay */
-@font-face{
-  font-family:"AdobeJensonProDisplay";
-  src:url("/fonts/AdobeJensonProDisplay.woff2") format("woff2");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProDisplay';
+	src: url('/fonts/AdobeJensonProDisplay.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprodisplay{font-family:"AdobeJensonProDisplay", var(--font-sans);}
+.font-adobejensonprodisplay {
+	font-family: 'AdobeJensonProDisplay', var(--font-sans);
+}
 
 /* AdobeJensonProItalic */
-@font-face{
-  font-family:"AdobeJensonProItalic";
-  src:url("/fonts/AdobeJensonProItalic.woff2") format("woff2");
-  font-weight:400;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProItalic';
+	src: url('/fonts/AdobeJensonProItalic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonproitalic{font-family:"AdobeJensonProItalic", var(--font-sans);}
+.font-adobejensonproitalic {
+	font-family: 'AdobeJensonProItalic', var(--font-sans);
+}
 
 /* AdobeJensonProItalicCaption */
-@font-face{
-  font-family:"AdobeJensonProItalicCaption";
-  src:url("/fonts/AdobeJensonProItalicCaption.woff2") format("woff2");
-  font-weight:400;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProItalicCaption';
+	src: url('/fonts/AdobeJensonProItalicCaption.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonproitaliccaption{font-family:"AdobeJensonProItalicCaption", var(--font-sans);}
+.font-adobejensonproitaliccaption {
+	font-family: 'AdobeJensonProItalicCaption', var(--font-sans);
+}
 
 /* AdobeJensonProItalicDisplay */
-@font-face{
-  font-family:"AdobeJensonProItalicDisplay";
-  src:url("/fonts/AdobeJensonProItalicDisplay.woff2") format("woff2");
-  font-weight:400;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProItalicDisplay';
+	src: url('/fonts/AdobeJensonProItalicDisplay.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonproitalicdisplay{font-family:"AdobeJensonProItalicDisplay", var(--font-sans);}
+.font-adobejensonproitalicdisplay {
+	font-family: 'AdobeJensonProItalicDisplay', var(--font-sans);
+}
 
 /* AdobeJensonProItalicSubhead */
-@font-face{
-  font-family:"AdobeJensonProItalicSubhead";
-  src:url("/fonts/AdobeJensonProItalicSubhead.woff2") format("woff2");
-  font-weight:400;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProItalicSubhead';
+	src: url('/fonts/AdobeJensonProItalicSubhead.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonproitalicsubhead{font-family:"AdobeJensonProItalicSubhead", var(--font-sans);}
+.font-adobejensonproitalicsubhead {
+	font-family: 'AdobeJensonProItalicSubhead', var(--font-sans);
+}
 
 /* AdobeJensonProLight */
-@font-face{
-  font-family:"AdobeJensonProLight";
-  src:url("/fonts/AdobeJensonProLight.woff2") format("woff2");
-  font-weight:300;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProLight';
+	src: url('/fonts/AdobeJensonProLight.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprolight{font-family:"AdobeJensonProLight", var(--font-sans);}
+.font-adobejensonprolight {
+	font-family: 'AdobeJensonProLight', var(--font-sans);
+}
 
 /* AdobeJensonProLightCaption */
-@font-face{
-  font-family:"AdobeJensonProLightCaption";
-  src:url("/fonts/AdobeJensonProLightCaption.woff2") format("woff2");
-  font-weight:300;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProLightCaption';
+	src: url('/fonts/AdobeJensonProLightCaption.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprolightcaption{font-family:"AdobeJensonProLightCaption", var(--font-sans);}
+.font-adobejensonprolightcaption {
+	font-family: 'AdobeJensonProLightCaption', var(--font-sans);
+}
 
 /* AdobeJensonProLightDisplay */
-@font-face{
-  font-family:"AdobeJensonProLightDisplay";
-  src:url("/fonts/AdobeJensonProLightDisplay.woff2") format("woff2");
-  font-weight:300;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProLightDisplay';
+	src: url('/fonts/AdobeJensonProLightDisplay.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprolightdisplay{font-family:"AdobeJensonProLightDisplay", var(--font-sans);}
+.font-adobejensonprolightdisplay {
+	font-family: 'AdobeJensonProLightDisplay', var(--font-sans);
+}
 
 /* AdobeJensonProLightItalic */
-@font-face{
-  font-family:"AdobeJensonProLightItalic";
-  src:url("/fonts/AdobeJensonProLightItalic.woff2") format("woff2");
-  font-weight:300;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProLightItalic';
+	src: url('/fonts/AdobeJensonProLightItalic.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprolightitalic{font-family:"AdobeJensonProLightItalic", var(--font-sans);}
+.font-adobejensonprolightitalic {
+	font-family: 'AdobeJensonProLightItalic', var(--font-sans);
+}
 
 /* AdobeJensonProLightItalicCaption */
-@font-face{
-  font-family:"AdobeJensonProLightItalicCaption";
-  src:url("/fonts/AdobeJensonProLightItalicCaption.woff2") format("woff2");
-  font-weight:300;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProLightItalicCaption';
+	src: url('/fonts/AdobeJensonProLightItalicCaption.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprolightitaliccaption{font-family:"AdobeJensonProLightItalicCaption", var(--font-sans);}
+.font-adobejensonprolightitaliccaption {
+	font-family: 'AdobeJensonProLightItalicCaption', var(--font-sans);
+}
 
 /* AdobeJensonProLightItalicDisplay */
-@font-face{
-  font-family:"AdobeJensonProLightItalicDisplay";
-  src:url("/fonts/AdobeJensonProLightItalicDisplay.woff2") format("woff2");
-  font-weight:300;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProLightItalicDisplay';
+	src: url('/fonts/AdobeJensonProLightItalicDisplay.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprolightitalicdisplay{font-family:"AdobeJensonProLightItalicDisplay", var(--font-sans);}
+.font-adobejensonprolightitalicdisplay {
+	font-family: 'AdobeJensonProLightItalicDisplay', var(--font-sans);
+}
 
 /* AdobeJensonProLightItalicSubhead */
-@font-face{
-  font-family:"AdobeJensonProLightItalicSubhead";
-  src:url("/fonts/AdobeJensonProLightItalicSubhead.woff2") format("woff2");
-  font-weight:300;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProLightItalicSubhead';
+	src: url('/fonts/AdobeJensonProLightItalicSubhead.woff2') format('woff2');
+	font-weight: 300;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprolightitalicsubhead{font-family:"AdobeJensonProLightItalicSubhead", var(--font-sans);}
+.font-adobejensonprolightitalicsubhead {
+	font-family: 'AdobeJensonProLightItalicSubhead', var(--font-sans);
+}
 
 /* AdobeJensonProLightSubhead */
-@font-face{
-  font-family:"AdobeJensonProLightSubhead";
-  src:url("/fonts/AdobeJensonProLightSubhead.woff2") format("woff2");
-  font-weight:300;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProLightSubhead';
+	src: url('/fonts/AdobeJensonProLightSubhead.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprolightsubhead{font-family:"AdobeJensonProLightSubhead", var(--font-sans);}
+.font-adobejensonprolightsubhead {
+	font-family: 'AdobeJensonProLightSubhead', var(--font-sans);
+}
 
 /* AdobeJensonProSemibold */
-@font-face{
-  font-family:"AdobeJensonProSemibold";
-  src:url("/fonts/AdobeJensonProSemibold.woff2") format("woff2");
-  font-weight:600;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProSemibold';
+	src: url('/fonts/AdobeJensonProSemibold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprosemibold{font-family:"AdobeJensonProSemibold", var(--font-sans);}
+.font-adobejensonprosemibold {
+	font-family: 'AdobeJensonProSemibold', var(--font-sans);
+}
 
 /* AdobeJensonProSemiboldCaption */
-@font-face{
-  font-family:"AdobeJensonProSemiboldCaption";
-  src:url("/fonts/AdobeJensonProSemiboldCaption.woff2") format("woff2");
-  font-weight:600;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProSemiboldCaption';
+	src: url('/fonts/AdobeJensonProSemiboldCaption.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprosemiboldcaption{font-family:"AdobeJensonProSemiboldCaption", var(--font-sans);}
+.font-adobejensonprosemiboldcaption {
+	font-family: 'AdobeJensonProSemiboldCaption', var(--font-sans);
+}
 
 /* AdobeJensonProSemiboldDisplay */
-@font-face{
-  font-family:"AdobeJensonProSemiboldDisplay";
-  src:url("/fonts/AdobeJensonProSemiboldDisplay.woff2") format("woff2");
-  font-weight:600;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProSemiboldDisplay';
+	src: url('/fonts/AdobeJensonProSemiboldDisplay.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprosemibolddisplay{font-family:"AdobeJensonProSemiboldDisplay", var(--font-sans);}
+.font-adobejensonprosemibolddisplay {
+	font-family: 'AdobeJensonProSemiboldDisplay', var(--font-sans);
+}
 
 /* AdobeJensonProSemiboldItalic */
-@font-face{
-  font-family:"AdobeJensonProSemiboldItalic";
-  src:url("/fonts/AdobeJensonProSemiboldItalic.woff2") format("woff2");
-  font-weight:600;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProSemiboldItalic';
+	src: url('/fonts/AdobeJensonProSemiboldItalic.woff2') format('woff2');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprosemibolditalic{font-family:"AdobeJensonProSemiboldItalic", var(--font-sans);}
+.font-adobejensonprosemibolditalic {
+	font-family: 'AdobeJensonProSemiboldItalic', var(--font-sans);
+}
 
 /* AdobeJensonProSemiboldItalicCaption */
-@font-face{
-  font-family:"AdobeJensonProSemiboldItalicCaption";
-  src:url("/fonts/AdobeJensonProSemiboldItalicCaption.woff2") format("woff2");
-  font-weight:600;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProSemiboldItalicCaption';
+	src: url('/fonts/AdobeJensonProSemiboldItalicCaption.woff2') format('woff2');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprosemibolditaliccaption{font-family:"AdobeJensonProSemiboldItalicCaption", var(--font-sans);}
+.font-adobejensonprosemibolditaliccaption {
+	font-family: 'AdobeJensonProSemiboldItalicCaption', var(--font-sans);
+}
 
 /* AdobeJensonProSemiboldItalicDisplay */
-@font-face{
-  font-family:"AdobeJensonProSemiboldItalicDisplay";
-  src:url("/fonts/AdobeJensonProSemiboldItalicDisplay.woff2") format("woff2");
-  font-weight:600;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProSemiboldItalicDisplay';
+	src: url('/fonts/AdobeJensonProSemiboldItalicDisplay.woff2') format('woff2');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprosemibolditalicdisplay{font-family:"AdobeJensonProSemiboldItalicDisplay", var(--font-sans);}
+.font-adobejensonprosemibolditalicdisplay {
+	font-family: 'AdobeJensonProSemiboldItalicDisplay', var(--font-sans);
+}
 
 /* AdobeJensonProSemiboldItalicSubhead */
-@font-face{
-  font-family:"AdobeJensonProSemiboldItalicSubhead";
-  src:url("/fonts/AdobeJensonProSemiboldItalicSubhead.woff2") format("woff2");
-  font-weight:600;
-  font-style:italic;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProSemiboldItalicSubhead';
+	src: url('/fonts/AdobeJensonProSemiboldItalicSubhead.woff2') format('woff2');
+	font-weight: 600;
+	font-style: italic;
+	font-display: swap;
 }
-.font-adobejensonprosemibolditalicsubhead{font-family:"AdobeJensonProSemiboldItalicSubhead", var(--font-sans);}
+.font-adobejensonprosemibolditalicsubhead {
+	font-family: 'AdobeJensonProSemiboldItalicSubhead', var(--font-sans);
+}
 
 /* AdobeJensonProSemiboldSubhead */
-@font-face{
-  font-family:"AdobeJensonProSemiboldSubhead";
-  src:url("/fonts/AdobeJensonProSemiboldSubhead.woff2") format("woff2");
-  font-weight:600;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProSemiboldSubhead';
+	src: url('/fonts/AdobeJensonProSemiboldSubhead.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprosemiboldsubhead{font-family:"AdobeJensonProSemiboldSubhead", var(--font-sans);}
+.font-adobejensonprosemiboldsubhead {
+	font-family: 'AdobeJensonProSemiboldSubhead', var(--font-sans);
+}
 
 /* AdobeJensonProSubhead */
-@font-face{
-  font-family:"AdobeJensonProSubhead";
-  src:url("/fonts/AdobeJensonProSubhead.woff2") format("woff2");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'AdobeJensonProSubhead';
+	src: url('/fonts/AdobeJensonProSubhead.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
-.font-adobejensonprosubhead{font-family:"AdobeJensonProSubhead", var(--font-sans);}
+.font-adobejensonprosubhead {
+	font-family: 'AdobeJensonProSubhead', var(--font-sans);
+}
 
 /* avenirltstd */
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-light-webfont.woff2") format("woff2");
-  font-weight:300;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-light-webfont.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-lightoblique-webfont.woff2") format("woff2");
-  font-weight:300;
-  font-style:oblique 10deg;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-lightoblique-webfont.woff2') format('woff2');
+	font-weight: 300;
+	font-style: oblique 10deg;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-book-webfont.woff2") format("woff2");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-book-webfont.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-bookoblique-webfont.woff2") format("woff2");
-  font-weight:400;
-  font-style:oblique 10deg;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-bookoblique-webfont.woff2') format('woff2');
+	font-weight: 400;
+	font-style: oblique 10deg;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-oblique-webfont.woff2") format("woff2");
-  font-weight:400;
-  font-style:oblique 10deg;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-oblique-webfont.woff2') format('woff2');
+	font-weight: 400;
+	font-style: oblique 10deg;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-roman-webfont.woff2") format("woff2");
-  font-weight:400;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-roman-webfont.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-medium-webfont.woff2") format("woff2");
-  font-weight:500;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-medium-webfont.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-mediumoblique-webfont.woff2") format("woff2");
-  font-weight:500;
-  font-style:oblique 10deg;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-mediumoblique-webfont.woff2') format('woff2');
+	font-weight: 500;
+	font-style: oblique 10deg;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-heavy-webfont.woff2") format("woff2");
-  font-weight:800;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-heavy-webfont.woff2') format('woff2');
+	font-weight: 800;
+	font-style: normal;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-heavyoblique-webfont.woff2") format("woff2");
-  font-weight:800;
-  font-style:oblique 10deg;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-heavyoblique-webfont.woff2') format('woff2');
+	font-weight: 800;
+	font-style: oblique 10deg;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-black-webfont.woff2") format("woff2");
-  font-weight:900;
-  font-style:normal;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-black-webfont.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
 }
-@font-face{
-  font-family:"avenirltstd";
-  src:url("/fonts/avenirltstd-blackoblique-webfont.woff2") format("woff2");
-  font-weight:900;
-  font-style:oblique 10deg;
-  font-display:swap;
+@font-face {
+	font-family: 'avenirltstd';
+	src: url('/fonts/avenirltstd-blackoblique-webfont.woff2') format('woff2');
+	font-weight: 900;
+	font-style: oblique 10deg;
+	font-display: swap;
 }
-.font-avenirltstd{font-family:"avenirltstd", var(--font-sans);}
+.font-avenirltstd {
+	font-family: 'avenirltstd', var(--font-sans);
+}
