@@ -3,11 +3,12 @@
 # Every gate below is enforced. Nothing is skipped to make the badge green —
 # if a check fails here, it is because the repository does not pass it.
 #
-# STATUS 2026-09-21: `npm ci`, `prettier --check` and `npm run build` pass.
-# `npm run check` (70 errors) and `npx eslint .` (102 errors) do not yet, and
-# the pytest job has no tests to run. Do not push this workflow to a public
-# repository until those pass locally — a red badge on the repository you are
-# asking a hiring committee to read is worse than no badge at all.
+# This is a pnpm project: there is no package-lock.json, so npm ci cannot be
+# used. The pnpm version is pinned below because pnpm 12 renamed the
+# build-approval key (onlyBuiltDependencies -> allowBuilds) and a mismatch
+# makes `pnpm install --frozen-lockfile` exit non-zero. Keep `version` here in
+# step with your local `pnpm --version`, or add a "packageManager" field to
+# package.json and delete the `version` line, which lets the action read it.
 
 name: CI
 
@@ -23,25 +24,29 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: npm
+          cache: pnpm
 
       - name: Install
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Type check
-        run: npm run check
+        run: pnpm run check
 
       - name: Formatting
-        run: npx prettier --check .
+        run: pnpm exec prettier --check .
 
       - name: Lint
-        run: npx eslint .
+        run: pnpm exec eslint .
 
       - name: Build
-        run: npm run build
+        run: pnpm run build
 
   pipeline:
     name: IPUMS pipeline — tests
@@ -54,7 +59,7 @@ jobs:
           python-version: '3.12'
 
       - name: Install
-        run: pip install pytest pandas
+        run: pip install pytest pandas lxml
 
       - name: Test
         run: pytest scripts/ -v
