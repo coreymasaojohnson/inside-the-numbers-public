@@ -62,4 +62,4 @@ jobs:
         run: pip install pytest pandas lxml
 
       - name: Test
-        run: pytest scripts/ -v
+        run: python -m pytest -v
