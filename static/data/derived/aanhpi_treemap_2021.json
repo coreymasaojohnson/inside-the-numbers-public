@@ -1,0 +1,118 @@
+[
+  {
+    "name": "Chinese",
+    "value": 2449175.0
+  },
+  {
+    "name": "Asian Indian",
+    "value": 2347318.0
+  },
+  {
+    "name": "Other NHPI",
+    "value": 1683772.0
+  },
+  {
+    "name": "Filipino",
+    "value": 1603613.0
+  },
+  {
+    "name": "Vietnamese",
+    "value": 1008386.0
+  },
+  {
+    "name": "Korean",
+    "value": 928415.0
+  },
+  {
+    "name": "Asian",
+    "value": 461099.0
+  },
+  {
+    "name": "Other Asian",
+    "value": 428587.0
+  },
+  {
+    "name": "Japanese",
+    "value": 348113.0
+  },
+  {
+    "name": "Pakistani",
+    "value": 295745.0
+  },
+  {
+    "name": "Taiwanese",
+    "value": 220650.0
+  },
+  {
+    "name": "Bangladeshi",
+    "value": 174878.0
+  },
+  {
+    "name": "Thai",
+    "value": 133506.0
+  },
+  {
+    "name": "Burmese",
+    "value": 127983.0
+  },
+  {
+    "name": "Cambodian",
+    "value": 127422.0
+  },
+  {
+    "name": "Laotian",
+    "value": 97570.0
+  },
+  {
+    "name": "Hmong",
+    "value": 83739.0
+  },
+  {
+    "name": "Sri Lankan",
+    "value": 41018.0
+  },
+  {
+    "name": "Bhutanese",
+    "value": 27985.0
+  },
+  {
+    "name": "Malaysian",
+    "value": 21492.0
+  },
+  {
+    "name": "Chamorro Islander",
+    "value": 20068.0
+  },
+  {
+    "name": "Micronesian",
+    "value": 20030.0
+  },
+  {
+    "name": "Other Pacific Islander",
+    "value": 19143.0
+  },
+  {
+    "name": "Mongolian",
+    "value": 15888.0
+  },
+  {
+    "name": "Guamanian/Chamorro",
+    "value": 12566.0
+  },
+  {
+    "name": "Okinawan",
+    "value": 2286.0
+  },
+  {
+    "name": "Polynesian",
+    "value": 1927.0
+  },
+  {
+    "name": "Native Hawaiian",
+    "value": 1680.0
+  },
+  {
+    "name": "Samoan",
+    "value": 1521.0
+  }
+]

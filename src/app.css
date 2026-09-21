@@ -1,0 +1,57 @@
+@import "tailwindcss";
+@import "$lib/styles/fonts.css";
+@import "$lib/styles/buttons.css";
+
+/* updated display font */
+.font-display {
+  font-family: "Avenir LT Std", "Avenir", "Helvetica Neue", system-ui,
+    -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-weight: 800; /* Heavy */
+  font-style: normal;
+}
+
+/* src/app.css (or a global typography file) */
+
+:root {
+  --font-header: "Avenir LT Std", "Avenir", "Helvetica Neue", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --font-body: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; /* adjust if you want Avenir for body too */
+}
+
+/* Headings use Heavy by default; override weight per level as desired */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-header);
+  font-weight: 800;          /* Heavy */
+  font-style: normal;
+  font-synthesis: none;      /* avoid faux bold/italic */
+  text-rendering: optimizeLegibility;
+}
+
+/* Examples of nuanced weights per level */
+h1 { font-weight: 900; }     /* Black for hero headers */
+h2 { font-weight: 800; }     /* Heavy */
+h3 { font-weight: 600; }     /* Medium */
+
+:root{
+  --container-max: 1280px; /* set once */
+  --container-pad: 32px;   /* horizontal gutters */
+  --hero-bg: #fff;         /* or your brand background */
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+
+.site-logo {
+  height: 45px;
+  width: auto;
+}
+
+/* Hero */
+.hero {
+  background: var(--hero-bg);
+  padding-block: 3rem;
+}
+

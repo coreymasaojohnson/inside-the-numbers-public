@@ -1,0 +1,64 @@
+{
+  "_metadata": {
+    "description": "IPUMS RACASIAN and RACPACIS detailed race codes for ACS 2000-present",
+    "source": "IPUMS USA",
+    "updated": "2025-01-28",
+    "note": "Codes starting with 1xx are RACASIAN, codes starting with 2xx are RACPACIS"
+  },
+  
+  "racasian": {
+    "10": "Asian Indian",
+    "11": "Bangladeshi", 
+    "12": "Bhutanese",
+    "13": "Burmese",
+    "14": "Cambodian",
+    "15": "Chinese",
+    "16": "Taiwanese",
+    "17": "Filipino",
+    "18": "Hmong",
+    "19": "Indonesian",
+    "20": "Japanese",
+    "21": "Korean",
+    "22": "Laotian",
+    "23": "Malaysian",
+    "24": "Mongolian",
+    "25": "Nepalese",
+    "26": "Okinawan",
+    "27": "Pakistani",
+    "28": "Sri Lankan",
+    "29": "Thai",
+    "30": "Vietnamese",
+    "31": "Iwo Jiman",
+    "32": "Maldivian",
+    "33": "Singaporean",
+    "90": "Other Asian",
+    "91": "Asian, not specified"
+  },
+  
+  "racpacis": {
+    "40": "Native Hawaiian",
+    "41": "Samoan",
+    "42": "Tongan",
+    "43": "Other Polynesian",
+    "44": "Guamanian or Chamorro",
+    "45": "Marshallese",
+    "46": "Palauan",
+    "47": "Chuukese",
+    "48": "Pohnpeian",
+    "49": "Kosraean",
+    "50": "Yapese",
+    "51": "Other Micronesian",
+    "52": "Fijian",
+    "53": "Other Melanesian",
+    "90": "Other Pacific Islander",
+    "91": "Pacific Islander, not specified"
+  },
+  
+  "_code_notes": {
+    "10-33": "RACASIAN detailed codes (Asian subgroups)",
+    "40-53": "RACPACIS detailed codes (Pacific Islander subgroups)",
+    "90": "Residual 'Other' category for each family",
+    "91": "Not specified - reported race but not specific subgroup",
+    "0": "Not reported or N/A (used when person selected different primary race)"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "inside-the-numbers",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "engines": { "node": ">=18.18 <21" },
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "svelte-kit preview",
+    "prepare": "svelte-kit sync || echo ''",
+    "postinstall": "svelte-kit sync",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "format": "prettier --write .",
+    "lint": "prettier --check . && eslint ."
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-vercel": "^5.10.3",
+    "@sveltejs/kit": "^2.46.4",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "@tailwindcss/postcss": "^4.1.14",
+    "@tailwindcss/vite": "^4.1.14",
+    "@types/node": "^22",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.36.0",
+    "eslint-config-prettier": "^10.1.0",
+    "eslint-plugin-svelte": "^3.12.1",
+    "postcss": "^8.5.6",
+    "prettier": "^3.6.2",
+    "prettier-plugin-svelte": "^3.4.0",
+    "svelte": "^5.39.11",
+    "svelte-check": "^4.3.3",
+    "tailwindcss": "^4.1.14",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9"
+  },
+  "dependencies": {
+    "d3": "^7.9.0",
+    "topojson-client": "3",
+    "us-atlas": "3"
+  }
+}

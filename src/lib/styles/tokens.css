@@ -1,0 +1,57 @@
+:root {
+  /* ===== COLORS ===== */
+  --color-primary: #0A6E73;       /* Teal — AAJC’s secondary brand color */
+  --color-accent: #E46A25;        /* Orange — brand accent */
+  --color-accent-deep: #D35417;   /* Deep orange — better contrast for backgrounds */
+  --color-accent-ember: #CC4E16;  /* Warm orange frame for backgrounds */
+  --color-text: #2E2E2E;          /* Main body text */
+  --color-bg: #FFFFFF;            /* Default background */
+  --color-bg-alt: #F5F2EF;        /* Warm gray alternate background */
+  --color-border: #DAD7D2;        /* Subtle borders/dividers */
+
+  /* ===== TYPOGRAPHY ===== */
+  --font-sans: 'Inter', 'Avenir Next', system-ui, sans-serif;
+  --font-serif: 'Crimson Pro', Georgia, serif;
+
+  /* Avenir header/display family (from fonts.css) */
+  --font-display: "Avenir LT Std", "Avenir", "Helvetica Neue", system-ui, sans-serif;
+  --font-display-weight: 800;     /* Heavy */
+  --font-hero-weight: 900;        /* Black — for the hero title */
+
+  /* ===== TYPE SCALE ===== */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+
+  /* ===== LAYOUT ===== */
+  --container-max: 1440px;         /* Shared max width for header + hero */
+  --container-pad: 0px;          /* Horizontal padding (gutters) */
+  --header-max: var(--container-max); /*Delete if this screws up layout */
+  --header-gap: 1.5rem;           /* Space between logo and title */
+  --hero-padding-block: 3rem;     /* Top/bottom padding inside hero */
+  --hero-bg: var(--color-bg);     /* Usually white; can be themed */
+
+  /* ===== SPACING ===== */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* ===== MOTION ===== */
+  --motion-fast: 150ms ease-in-out;
+  --motion-medium: 250ms ease-in-out;
+
+  /* ===== BANDS (header + hero) ===== */
+  --hero-padding-block: 3rem; /* default vertical padding for .hero */
+  --header-block: 1.25rem;         /* header vertical padding */
+  --band-pad-block: 1.25rem;       /* base top/bottom for the band */
+  --band-gap: 0.75rem;             /* space between TopBar and Hero */
+  --band-bg: var(--color-bg);      /* usually white */
+  --band-border: var(--color-border);
+}

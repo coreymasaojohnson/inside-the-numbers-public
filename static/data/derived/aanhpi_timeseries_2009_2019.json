@@ -1,0 +1,407 @@
+[
+  {
+    "year": 2009,
+    "name": "Asian Indian",
+    "value": 1745425.0
+  },
+  {
+    "year": 2009,
+    "name": "Bangladeshi",
+    "value": 524.0
+  },
+  {
+    "year": 2009,
+    "name": "Burmese",
+    "value": 57152.0
+  },
+  {
+    "year": 2009,
+    "name": "Cambodian",
+    "value": 143004.0
+  },
+  {
+    "year": 2009,
+    "name": "Chamorro Islander",
+    "value": 518.0
+  },
+  {
+    "year": 2009,
+    "name": "Chinese",
+    "value": 2077150.0
+  },
+  {
+    "year": 2009,
+    "name": "Eurasian",
+    "value": 36.0
+  },
+  {
+    "year": 2009,
+    "name": "Filipino",
+    "value": 1609700.0
+  },
+  {
+    "year": 2009,
+    "name": "Guamanian/Chamorro",
+    "value": 486.0
+  },
+  {
+    "year": 2009,
+    "name": "Hmong",
+    "value": 89998.0
+  },
+  {
+    "year": 2009,
+    "name": "Japanese",
+    "value": 370800.0
+  },
+  {
+    "year": 2009,
+    "name": "Korean",
+    "value": 1055519.0
+  },
+  {
+    "year": 2009,
+    "name": "Laotian",
+    "value": 116054.0
+  },
+  {
+    "year": 2009,
+    "name": "Malaysian",
+    "value": 7675.0
+  },
+  {
+    "year": 2009,
+    "name": "Mongolian",
+    "value": 455.0
+  },
+  {
+    "year": 2009,
+    "name": "Native Hawaiian",
+    "value": 185.0
+  },
+  {
+    "year": 2009,
+    "name": "Okinawan",
+    "value": 1204.0
+  },
+  {
+    "year": 2009,
+    "name": "Other NHPI",
+    "value": 334677.0
+  },
+  {
+    "year": 2009,
+    "name": "Other Pacific Islander",
+    "value": 1334.0
+  },
+  {
+    "year": 2009,
+    "name": "Pakistani",
+    "value": 2766.0
+  },
+  {
+    "year": 2009,
+    "name": "Polynesian",
+    "value": 20.0
+  },
+  {
+    "year": 2009,
+    "name": "Samoan",
+    "value": 54.0
+  },
+  {
+    "year": 2009,
+    "name": "Sri Lankan",
+    "value": 1735.0
+  },
+  {
+    "year": 2009,
+    "name": "Taiwanese",
+    "value": 191418.0
+  },
+  {
+    "year": 2009,
+    "name": "Thai",
+    "value": 131885.0
+  },
+  {
+    "year": 2009,
+    "name": "Vietnamese",
+    "value": 994334.0
+  },
+  {
+    "year": 2014,
+    "name": "Asian Indian",
+    "value": 2052012.0
+  },
+  {
+    "year": 2014,
+    "name": "Bangladeshi",
+    "value": 1025.0
+  },
+  {
+    "year": 2014,
+    "name": "Burmese",
+    "value": 111821.0
+  },
+  {
+    "year": 2014,
+    "name": "Cambodian",
+    "value": 137821.0
+  },
+  {
+    "year": 2014,
+    "name": "Chamorro Islander",
+    "value": 535.0
+  },
+  {
+    "year": 2014,
+    "name": "Chinese",
+    "value": 2373414.0
+  },
+  {
+    "year": 2014,
+    "name": "Eurasian",
+    "value": 32.0
+  },
+  {
+    "year": 2014,
+    "name": "Filipino",
+    "value": 1619029.0
+  },
+  {
+    "year": 2014,
+    "name": "Guamanian/Chamorro",
+    "value": 233.0
+  },
+  {
+    "year": 2014,
+    "name": "Hmong",
+    "value": 87294.0
+  },
+  {
+    "year": 2014,
+    "name": "Japanese",
+    "value": 353772.0
+  },
+  {
+    "year": 2014,
+    "name": "Korean",
+    "value": 1008602.0
+  },
+  {
+    "year": 2014,
+    "name": "Laotian",
+    "value": 109855.0
+  },
+  {
+    "year": 2014,
+    "name": "Malaysian",
+    "value": 7590.0
+  },
+  {
+    "year": 2014,
+    "name": "Micronesian",
+    "value": 152.0
+  },
+  {
+    "year": 2014,
+    "name": "Mongolian",
+    "value": 699.0
+  },
+  {
+    "year": 2014,
+    "name": "Native Hawaiian",
+    "value": 206.0
+  },
+  {
+    "year": 2014,
+    "name": "Okinawan",
+    "value": 1385.0
+  },
+  {
+    "year": 2014,
+    "name": "Other Asian",
+    "value": 17205.0
+  },
+  {
+    "year": 2014,
+    "name": "Other NHPI",
+    "value": 338578.0
+  },
+  {
+    "year": 2014,
+    "name": "Other Pacific Islander",
+    "value": 2210.0
+  },
+  {
+    "year": 2014,
+    "name": "Pakistani",
+    "value": 2635.0
+  },
+  {
+    "year": 2014,
+    "name": "Polynesian",
+    "value": 55.0
+  },
+  {
+    "year": 2014,
+    "name": "Sri Lankan",
+    "value": 1684.0
+  },
+  {
+    "year": 2014,
+    "name": "Taiwanese",
+    "value": 200625.0
+  },
+  {
+    "year": 2014,
+    "name": "Thai",
+    "value": 131560.0
+  },
+  {
+    "year": 2014,
+    "name": "Vietnamese",
+    "value": 1038421.0
+  },
+  {
+    "year": 2019,
+    "name": "Asian Indian",
+    "value": 2347318.0
+  },
+  {
+    "year": 2019,
+    "name": "Bangladeshi",
+    "value": 880.0
+  },
+  {
+    "year": 2019,
+    "name": "Bhutanese",
+    "value": 376.0
+  },
+  {
+    "year": 2019,
+    "name": "Burmese",
+    "value": 127983.0
+  },
+  {
+    "year": 2019,
+    "name": "Cambodian",
+    "value": 127422.0
+  },
+  {
+    "year": 2019,
+    "name": "Chamorro Islander",
+    "value": 540.0
+  },
+  {
+    "year": 2019,
+    "name": "Chinese",
+    "value": 2449175.0
+  },
+  {
+    "year": 2019,
+    "name": "Filipino",
+    "value": 1603613.0
+  },
+  {
+    "year": 2019,
+    "name": "Guamanian/Chamorro",
+    "value": 286.0
+  },
+  {
+    "year": 2019,
+    "name": "Hmong",
+    "value": 83739.0
+  },
+  {
+    "year": 2019,
+    "name": "Japanese",
+    "value": 348113.0
+  },
+  {
+    "year": 2019,
+    "name": "Korean",
+    "value": 928415.0
+  },
+  {
+    "year": 2019,
+    "name": "Laotian",
+    "value": 97570.0
+  },
+  {
+    "year": 2019,
+    "name": "Malaysian",
+    "value": 9067.0
+  },
+  {
+    "year": 2019,
+    "name": "Micronesian",
+    "value": 105.0
+  },
+  {
+    "year": 2019,
+    "name": "Mongolian",
+    "value": 1290.0
+  },
+  {
+    "year": 2019,
+    "name": "Native Hawaiian",
+    "value": 268.0
+  },
+  {
+    "year": 2019,
+    "name": "Okinawan",
+    "value": 1954.0
+  },
+  {
+    "year": 2019,
+    "name": "Other Asian",
+    "value": 228009.0
+  },
+  {
+    "year": 2019,
+    "name": "Other NHPI",
+    "value": 340099.0
+  },
+  {
+    "year": 2019,
+    "name": "Other Pacific Islander",
+    "value": 2252.0
+  },
+  {
+    "year": 2019,
+    "name": "Pakistani",
+    "value": 3765.0
+  },
+  {
+    "year": 2019,
+    "name": "Polynesian",
+    "value": 0
+  },
+  {
+    "year": 2019,
+    "name": "Samoan",
+    "value": 27.0
+  },
+  {
+    "year": 2019,
+    "name": "Sri Lankan",
+    "value": 1839.0
+  },
+  {
+    "year": 2019,
+    "name": "Taiwanese",
+    "value": 217193.0
+  },
+  {
+    "year": 2019,
+    "name": "Thai",
+    "value": 133506.0
+  },
+  {
+    "year": 2019,
+    "name": "Vietnamese",
+    "value": 1008386.0
+  }
+]

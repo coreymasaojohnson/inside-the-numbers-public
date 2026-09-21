@@ -1,0 +1,24 @@
+# Node / SvelteKit / Vite
+node_modules/
+.svelte-kit/
+.vite/
+build/
+dist/
+
+# OS / IDE
+.DS_Store
+*.log
+*.bak
+.vscode/
+.idea/
+
+# Env / local
+.env*
+.vercel
+.venv/
+
+# Licensed typefaces are NOT redistributed in this repository — see README
+static/fonts/
+
+# Documents are not served from this repository
+static/pdfs/
