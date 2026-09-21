@@ -66,9 +66,12 @@ class TestIpumsReconciliation(unittest.TestCase):
     def test_normalize_ancestry_missing_and_zero(self):
         # 0 / '0' / '000' and 999 are Census missing markers; must normalize to None
         self.assertIsNone(ipums.normalize_ancestry_code(0))
+        self.assertIsNone(ipums.normalize_ancestry_code(0.0))
+        self.assertIsNone(ipums.normalize_ancestry_code("0.0"))
         self.assertIsNone(ipums.normalize_ancestry_code("0"))
         self.assertIsNone(ipums.normalize_ancestry_code("000"))
         self.assertIsNone(ipums.normalize_ancestry_code(999))
+        self.assertIsNone(ipums.normalize_ancestry_code(999.0))
         self.assertIsNone(ipums.normalize_ancestry_code("999"))
         self.assertIsNone(ipums.normalize_ancestry_code(""))
         self.assertIsNone(ipums.normalize_ancestry_code(None))
