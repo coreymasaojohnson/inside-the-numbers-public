@@ -66,13 +66,14 @@
 	});
 
 	// --- Prepare state for IntroBelow ---
-	$: introView =$currentView;
+	$: introView = $currentView;
 
-	$: introScope =$isMap
+	$: introScope = $isMap
 		? `${$mapCategory.charAt(0).toUpperCase() + $mapCategory.slice(1)} - ${$mapScope.charAt(0).toUpperCase() + $mapScope.slice(1)}`
 		: $isTreemap
-			? $treemapFamily.charAt(0).toUpperCase() + $treemapFamily.slice(1) 			:$isGrowth
-				? $growthView.charAt(0).toUpperCase() +$growthView.slice(1)
+			? $treemapFamily.charAt(0).toUpperCase() + $treemapFamily.slice(1)
+			: $isGrowth
+				? $growthView.charAt(0).toUpperCase() + $growthView.slice(1)
 				: '';
 
 	$: introScale = $isGrowth ? ($growthScale === 'absolute' ? 'Absolute' : 'Indexed') : '';
@@ -90,7 +91,9 @@
 
 		if ($isMap) {
 			mapScope.set(internalKey as 'county' | 'state');
-		} else if ($isTreemap) { 			treemapFamily.set(internalKey as 'combined' | 'asian' | 'nhpi'); 		} else if ($isGrowth) {
+		} else if ($isTreemap) {
+			treemapFamily.set(internalKey as 'combined' | 'asian' | 'nhpi');
+		} else if ($isGrowth) {
 			growthView.set(internalKey as 'combined' | 'asian' | 'nhpi');
 		}
 	};

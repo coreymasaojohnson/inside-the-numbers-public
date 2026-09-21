@@ -5,7 +5,7 @@ import {
 	NHPI_CANONICAL_RULES,
 	NHPI_COMPUTED_OTHER,
 	ACS_SUBGROUPS_CONFIG,
-	type CanonicalRule,
+	type CanonicalRule
 } from './subgroup_rules';
 
 export type TreemapRow = { name: string; value: number };

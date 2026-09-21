@@ -13,7 +13,7 @@
 
 	const ASIAN_COLORS_SET = PALETTE.plum.slice(1, 1 + TOP_N);
 	const NHPI_COLORS_SET = PALETTE.ember.slice(1, 1 + TOP_N);
-		const BASELINE_COLOR = PALETTE.gray[5];
+	const BASELINE_COLOR = PALETTE.gray[5];
 
 	// ── Types ────────────────────────────────────────────────────────────────
 	type TimeSeriesData = Array<{ year: number; name: string; value: number }>;
@@ -422,9 +422,7 @@
 								.style('font-size', '10px')
 								.style('font-weight', 600)
 								.style('fill', colorScale(layer.key) as string)
-								.text(
-									`${layer.key} (${formatNumber(value, { notation: 'compact' })})`
-								);
+								.text(`${layer.key} (${formatNumber(value, { notation: 'compact' })})`);
 						} else {
 							smallGroups.push({
 								key: layer.key,
@@ -476,9 +474,7 @@
 							.style('font-size', '9px')
 							.style('font-weight', 500)
 							.style('fill', '#374151')
-							.text(
-								`${grp.key} (${formatNumber(grp.value, { notation: 'compact' })})`
-							);
+							.text(`${grp.key} (${formatNumber(grp.value, { notation: 'compact' })})`);
 					});
 				}
 			}

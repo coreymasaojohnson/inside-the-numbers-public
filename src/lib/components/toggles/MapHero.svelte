@@ -8,10 +8,7 @@
 	import { feature, mesh } from 'topojson-client';
 	import { onMount, onDestroy } from 'svelte';
 
-	import {
-		getAanhpiForeignBornCached,
-		getAanhpiForeignBornByStateCached
-	} from '$lib/data/acs';
+	import { getAanhpiForeignBornCached, getAanhpiForeignBornByStateCached } from '$lib/data/acs';
 	import type { CountyFips } from '$lib/data/acs';
 	import { PALETTE } from '$lib/styles/palettes';
 
@@ -599,7 +596,12 @@
 		})();
 	}
 
-	$: if (initialized && (scope !== undefined || category !== undefined) && counties && statesFeats) {
+	$: if (
+		initialized &&
+		(scope !== undefined || category !== undefined) &&
+		counties &&
+		statesFeats
+	) {
 		handleScopeOrCategoryChange(scope);
 	}
 
