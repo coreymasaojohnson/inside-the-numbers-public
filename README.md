@@ -43,6 +43,37 @@ imply a precision the source does not support.
 - `scripts/merge_timeseries.py` — joins survey years into a single series
 - `static/data/pums/ipums_*_codes_*.json` — the code books the reconciliation runs against
 
+## What I would walk through
+
+Start with `scripts/test_ipums_to_json.py` and the five functions it exercises in
+`scripts/ipums_to_json_v2.py`. Sixteen tests pin down the decisions the charts depend on:
+
+- **`normalize_ancestry_code`** — what counts as a missing code, across the forms it actually
+  arrives in. Pandas reads an integer column containing blanks as float64, so `0.0` has to be
+  treated the same as `0`, `"000"` and `999`.
+- **`get_subgroup_from_ancestry`** — `ANCESTR1` first, `ANCESTR2` only when the first is
+  uninformative, plus the three-to-four-digit conversion that reconciles code systems which
+  changed between survey years.
+- **`get_subgroup_from_race_fallback`** — what happens when ancestry cannot answer and race
+  has to carry it.
+- **`is_foreign_born_robust`** — `NATIVITY` where it is present, `BPL` otherwise, with the
+  boundary at 100 domestic and 101 foreign.
+- **`family_from_subgroup`** — Asian or NHPI.
+
+Writing those tests found a defect I had shipped. On the race-fallback path, a respondent
+recorded as Native Hawaiian or Pacific Islander whose race label matched no recognized term
+fell through into the Asian residual category — the exact failure a disaggregation project
+exists to prevent. `test_race_fallback_nhpi_alone_no_asian_leak` covers it now, and the fix is
+the race-code check before the residual assignment in `get_subgroup_from_race_fallback`.
+
+```bash
+pip install pytest pandas lxml
+python -m pytest -v
+```
+
+GitHub Actions runs these alongside the application's type, format, lint and build gates, so a
+clean clone either passes all of them or fails visibly.
+
 ## The application
 
 SvelteKit and D3, deployed on Vercel.
