@@ -93,9 +93,15 @@ def normalize_ancestry_code(code_value: Any) -> Optional[str]:
     """Convert ancestry value to standardized string code."""
     if pd.isna(code_value) or code_value is None:
         return None
+
+    # Handle string representations directly
+    s = str(code_value).strip()
+    if not s or s in {"0", "00", "000"}:
+        return None
+
     try:
-        code_int = int(code_value)
-        if code_int == 999:  # Not applicable/missing
+        code_int = int(float(s))
+        if code_int in {0, 999}:  # Census missing/not reported or N/A
             return None
         return str(code_int)
     except Exception:
@@ -165,6 +171,7 @@ def get_subgroup_from_race_fallback(race_code: Any, race_label: str) -> Optional
         "tongan": "Tongan",
         "polynesian": "Polynesian",
         "micronesian": "Micronesian",
+        "guamanian/chamorro": "Guamanian/Chamorro",
         "guamanian": "Guamanian/Chamorro",
         "chamorro": "Guamanian/Chamorro",
         "marshallese": "Marshallese",
@@ -182,7 +189,10 @@ def get_subgroup_from_race_fallback(race_code: Any, race_label: str) -> Optional
     if "pacific" in label_lower:
         return OTHER_NHPI
     
-    # Default AANHPI residual
+    # Check race code before assigning residual category
+    if race_int == 5:
+        return OTHER_NHPI
+
     return OTHER_ASIAN
 
 def family_from_subgroup(subgroup: str) -> str:
@@ -309,9 +319,6 @@ def main(csv_path: Path, ddi_path: Path, out_dir: Path,
     
     race6_with_ancestry = race6[race6.apply(has_valid_aanhpi_ancestry, axis=1)].copy()
     print(f"  ✓ {len(race6_with_ancestry):,} RACE 6 with valid ancestry ({race6_with_ancestry[WEIGHT_COL].sum():,.0f} weighted)")
-    
-    # Combine core AANHPI with validated RACE 6
-    df = pd.concat([core_aanhpi, race6_with_ancestry], ignore_index=True)
     
     # Combine core AANHPI with validated RACE 6
     df = pd.concat([core_aanhpi, race6_with_ancestry], ignore_index=True)

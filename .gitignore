@@ -22,3 +22,4 @@ static/fonts/
 
 # Documents are not served from this repository
 static/pdfs/
+.venv
